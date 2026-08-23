@@ -19,12 +19,13 @@ export const DataProvider = ({ children }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    const base = import.meta.env.BASE_URL;
     Promise.all([
-      fetch('/data.json').then((res) => {
+      fetch(`${base}data.json`).then((res) => {
         if (!res.ok) throw new Error('Error al cargar empresas privadas');
         return res.json();
       }),
-      fetch('/public_entities.json').then((res) => {
+      fetch(`${base}public_entities.json`).then((res) => {
         if (!res.ok) throw new Error('Error al cargar entidades públicas');
         return res.json();
       })
