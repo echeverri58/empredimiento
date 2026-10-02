@@ -1,0 +1,58 @@
+{
+  "generatedAt": "2026-10-02",
+  "sourceCsv": "10.000_Empresas_mas_Grandes_del_País_20261002.csv",
+  "years": [
+    "2025",
+    "2024",
+    "2023",
+    "2022",
+    "2021"
+  ],
+  "byYear": {
+    "2025": {
+      "count": 10000,
+      "ingresos": 1852.83,
+      "ganancias": 131.7,
+      "activos": 2560.44,
+      "pasivos": 1376.06,
+      "patrimonio": 1182.74,
+      "perdidas": 417
+    },
+    "2024": {
+      "count": 10000,
+      "ingresos": 1764.13,
+      "ganancias": 116.18,
+      "activos": 2458.21,
+      "pasivos": 1265.65,
+      "patrimonio": 1190.66,
+      "perdidas": 519
+    },
+    "2023": {
+      "count": 10000,
+      "ingresos": 1908.72,
+      "ganancias": 125.66,
+      "activos": 2303.38,
+      "pasivos": 1200.88,
+      "patrimonio": 1100.41,
+      "perdidas": 499
+    },
+    "2022": {
+      "count": 10000,
+      "ingresos": 1727.58,
+      "ganancias": 166.21,
+      "activos": 2152.73,
+      "pasivos": 1091.08,
+      "patrimonio": 1058.32,
+      "perdidas": 413
+    },
+    "2021": {
+      "count": 10000,
+      "ingresos": 1306.35,
+      "ganancias": 118.35,
+      "activos": 1808.13,
+      "pasivos": 870.46,
+      "patrimonio": 933.8,
+      "perdidas": 302
+    }
+  }
+}
