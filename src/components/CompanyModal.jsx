@@ -7,13 +7,17 @@ import {
 } from 'lucide-react';
 
 export const CompanyModal = () => {
-  const { selectedCompany, setSelectedCompany, getCompanyHistory } = useData();
+  const { selectedCompany, setSelectedCompany, getCompanyHistory, years, historyLoaded } = useData();
+
+  // Los hooks deben ejecutarse siempre en el mismo orden, por eso el useMemo
+  // va ANTES del return condicional (si no, React rompe el orden de hooks).
+  const history = useMemo(() => {
+    return selectedCompany ? getCompanyHistory(selectedCompany.nit) : [];
+  }, [selectedCompany, getCompanyHistory]);
+
+  const yearRange = years.length ? `${years[years.length - 1]} - ${years[0]}` : '';
 
   if (!selectedCompany) return null;
-
-  const history = useMemo(() => {
-    return getCompanyHistory(selectedCompany.nit);
-  }, [selectedCompany, getCompanyHistory]);
 
   return (
     <div className="fixed inset-0 z-[1000] flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-950/80 backdrop-blur-md animate-fade-in">
@@ -109,11 +113,17 @@ export const CompanyModal = () => {
           </div>
 
           {/* Historical Progression Table */}
-          {history.length > 1 && (
+          {!historyLoaded && (
+            <p className="text-[11px] text-slate-500 italic">
+              Cargando histórico financiero multi-año…
+            </p>
+          )}
+
+          {historyLoaded && history.length > 1 && (
             <div className="space-y-2">
               <h4 className="text-xs font-bold text-white flex items-center gap-1.5">
                 <Calendar className="w-4 h-4 text-emerald-400" />
-                Histórico Financiero y Fuerza Laboral (2021 - 2024)
+                Histórico Financiero y Fuerza Laboral ({yearRange})
               </h4>
 
               <div className="overflow-x-auto rounded-xl border border-slate-800">

@@ -1,7 +1,11 @@
 import csv
+import datetime
+import glob
 import json
 import os
+import re
 import sys
+import unicodedata
 
 sys.stdout.reconfigure(encoding='utf-8')
 
@@ -135,26 +139,154 @@ SECTOR_REVENUE_PER_EMP = {
     "OTROS": 0.00040
 }
 
-def parse_float(val):
+PARSE_FAILURES = []
+
+def parse_float(val, context=''):
+    """Convierte montos tipo '$ 100.59', '-$0.80' o '1,234.5' a float.
+
+    El dataset cambió de formato entre versiones (2026-08 vs 2026-10):
+    antes los negativos venían como '-$0.80' y ahora como '-$ 0.82' (con
+    espacio tras el '$'). Con el parseo anterior, float('- 0.82') fallaba y
+    TODAS las pérdidas se convertían silenciosamente en 0.00. Aquí se
+    eliminan todos los espacios y se normaliza el signo.
+    """
     if not val:
         return 0.0
-    val = val.replace('$', '').replace(',', '').strip()
+    s = re.sub(r'\s+', '', val.replace('$', '').replace(',', ''))
+    if s in ('', '-', '+', '.'):
+        return 0.0
     try:
-        return round(float(val), 2)
+        return round(float(s), 2)
     except ValueError:
+        PARSE_FAILURES.append((context, val))
         return 0.0
 
+# ---------------------------------------------------------------------------
+# Geocodificación
+# ---------------------------------------------------------------------------
+# El CSV oficial escribe los municipios CON tildes ("MEDELLÍN", "CÚCUTA",
+# "ITAGÜÍ", "IBAGUÉ") mientras que las tablas de coordenadas están sin ellas.
+# Comparar en crudo hacía que ~2.600 empresas por año cayeran al centroide del
+# departamento y otras 157 acabaran en Bogotá por defecto. Ahora se normaliza
+# (mayúsculas, sin tildes, espacios simples) antes de comparar.
+
+def strip_accents(txt):
+    return ''.join(c for c in unicodedata.normalize('NFKD', txt)
+                   if not unicodedata.combining(c))
+
+
+def norm(txt):
+    return re.sub(r'\s+', ' ', strip_accents(str(txt).upper())).strip()
+
+
+# Municipios/capitales que faltaban en la tabla original
+EXTRA_CITIES = {
+    # Capitales de departamento ausentes
+    'MOCOA': (1.1533, -76.6475),
+    'ARAUCA': (7.0847, -70.7591),
+    'SAN JOSE DEL GUAVIARE': (2.5689, -72.6394),
+    'MITU': (1.1983, -70.1706),
+    'PUERTO CARRENO': (6.1861, -67.4856),
+    'LETICIA': (-1.4444, -69.9403),
+    'INIRIDA': (3.8653, -67.9239),
+    # Área metropolitana y municipios con volumen relevante
+    'COPACABANA': (6.3481, -75.5089),
+    'GIRON': (7.0708, -73.1697),
+    'FLORIDABLANCA': (7.0628, -73.0864),
+    'PIEDECUESTA': (6.9803, -73.0511),
+    'GALAPA': (10.9133, -74.8878),
+    'PUERTO COLOMBIA': (10.9883, -74.9539),
+    'MALAMBO': (10.8581, -74.7819),
+    'TURBACO': (10.3233, -75.4147),
+    'MAGANGUE': (9.2419, -74.7539),
+    'APARTADO': (7.8833, -76.6333),
+    'GUARNE': (6.2803, -75.4419),
+    'BUGA': (3.9006, -76.2978),
+    'CANDELARIA': (3.4111, -76.3478),
+    'JAMUNDI': (3.2608, -76.5397),
+    'EL CERRITO': (3.6856, -76.3117),
+    'ZARZAL': (4.3950, -76.0719),
+    'PRADERA': (3.4189, -76.2444),
+    'FLORIDA': (3.3256, -76.2344),
+    'GINEBRA': (3.7247, -76.2669),
+    'YOTOCO': (3.8611, -76.4689),
+    'RIOFRIO': (4.1569, -76.2878),
+    'VIJES': (3.7000, -76.4369),
+    'ANDALUCIA': (4.1667, -76.1667),
+    'ANSERMANUEVO': (4.7975, -76.0181),
+    'LA UNION': (4.5319, -76.0953),
+    'SAN PEDRO': (3.9833, -76.2333),
+    'SARAVENA': (6.9553, -71.8733),
+    'ARAUQUITA': (6.9367, -71.4169),
+    'TAME': (6.4600, -71.7300),
+    'PUERTO ASIS': (0.5133, -76.5000),
+    'ORITO': (0.6667, -76.8700),
+    'PUERTO LEGUIZAMO': (-0.1900, -74.7800),
+    'SANTA ROSALIA': (5.1333, -70.8600),
+}
+
+# Departamentos que faltaban por completo en la tabla original
+EXTRA_DEPTS = {
+    'VALLE DEL CAUCA': (3.8000, -76.5000),
+    'SAN ANDRES Y PROVIDENCIA': (12.5847, -81.7006),
+    'ARAUCA': (6.7000, -70.7000),
+    'PUTUMAYO': (0.6000, -75.6000),
+    'GUAVIARE': (2.5689, -72.6394),
+    'VAUPES': (0.9000, -70.8000),
+    'VICHADA': (4.4200, -69.2900),
+    'AMAZONAS': (-1.5000, -71.9000),
+    'GUAINIA': (2.5700, -68.1300),
+}
+
+# Variantes de nombre que no son simples tildes
+CITY_ALIASES = {
+    'BOGOTA': 'BOGOTA, D.C.',
+    'BOGOTA D C': 'BOGOTA, D.C.',
+    'MITU VAUPES': 'MITU',
+}
+
+DEPT_ALIASES = {
+    'GUAJIRA': 'LA GUAJIRA',
+    'BOGOTA': 'BOGOTA D.C.',
+}
+
+def _as_pair(v):
+    """Las tablas originales usan {'lat','lng'} y las nuevas tuplas (lat, lng)."""
+    if isinstance(v, dict):
+        return (v['lat'], v['lng'])
+    return (v[0], v[1])
+
+
+CITY_LOOKUP = {norm(k): _as_pair(v) for k, v in {**CITY_COORDS, **EXTRA_CITIES}.items()}
+DEPT_LOOKUP = {norm(k): _as_pair(v) for k, v in {**DEPT_COORDS, **EXTRA_DEPTS}.items()}
+
+GEO_STATS = {'city': 0, 'dept': 0, 'default': 0}
+
+
 def get_coords(city, dept):
-    c_clean = city.strip().upper()
-    d_clean = dept.strip().upper()
-    if c_clean in CITY_COORDS:
-        return CITY_COORDS[c_clean]["lat"], CITY_COORDS[c_clean]["lng"]
-    for k, v in CITY_COORDS.items():
-        if k in c_clean or c_clean in k:
-            return v["lat"], v["lng"]
-    if d_clean in DEPT_COORDS:
-        return DEPT_COORDS[d_clean]["lat"], DEPT_COORDS[d_clean]["lng"]
-    return 4.7110, -74.0721
+    """Devuelve (lat, lng, origen) con origen en 'city' | 'dept' | 'default'.
+
+    Se evita a propósito la coincidencia parcial de nombres: hacía que
+    'CARTAGENA DEL CHAIRA' (Caquetá) cayera sobre Cartagena (Bolívar), a
+    350 km de su ubicación real. Es preferible un centroide departamental
+    honesto que un punto exacto en el lugar equivocado.
+    """
+    c = norm(city)
+    d = norm(dept)
+
+    hit = CITY_LOOKUP.get(c) or CITY_LOOKUP.get(norm(CITY_ALIASES.get(c, '')))
+    if hit:
+        GEO_STATS['city'] += 1
+        return hit[0], hit[1], 'city'
+
+    key = DEPT_ALIASES.get(d, d)
+    hit = DEPT_LOOKUP.get(key) or DEPT_LOOKUP.get(d)
+    if hit:
+        GEO_STATS['dept'] += 1
+        return hit[0], hit[1], 'dept'
+
+    GEO_STATS['default'] += 1
+    return 4.7110, -74.0721, 'default'
 
 def estimate_employees(name, sector, ingresos):
     name_upper = name.upper()
@@ -168,11 +300,30 @@ def estimate_employees(name, sector, ingresos):
     estimated = int(ingresos / rev_per_emp)
     return max(15, min(60000, estimated))
 
+CSV_PATTERN = '10.000_Empresas_mas_Grandes_del_País_*.csv'
+
+
+def find_csv_files():
+    """CSV del dataset, ordenados del más antiguo al más reciente.
+
+    La exportación oficial siempre incluye TODOS los años fiscales
+    (2021..2025), por eso basta con procesar el archivo más reciente.
+    """
+    return sorted(glob.glob(CSV_PATTERN))
+
+
 def process_data():
-    csv_filename = '10.000_Empresas_mas_Grandes_del_País_20260821.csv'
+    csv_files = find_csv_files()
+    if not csv_files:
+        raise SystemExit(f'No se encontró ningún CSV que coincida con: {CSV_PATTERN}')
+    print(f'CSV encontrados ({len(csv_files)}):')
+    for path in csv_files:
+        print(f'  - {path}')
+    csv_filename = csv_files[-1]
+    print(f'-> Usando el más reciente: {csv_filename}\n')
     data_by_year = {}
     
-    with open(csv_filename, mode='r', encoding='utf-8') as f:
+    with open(csv_filename, mode='r', encoding='utf-8-sig') as f:
         reader = csv.DictReader(f)
         for r in reader:
             year = r['Año de Corte'].replace(',', '').strip()
@@ -190,7 +341,7 @@ def process_data():
             sector = r['MACROSECTOR'].strip().upper()
             name = r['RAZÓN SOCIAL'].strip()
 
-            lat, lng = get_coords(ciudad, depto)
+            lat, lng, geo = get_coords(ciudad, depto)
             empleados = estimate_employees(name, sector, ingresos)
             
             item = {
@@ -210,7 +361,8 @@ def process_data():
                 "empleados": empleados,
                 "year": year,
                 "lat": lat,
-                "lng": lng
+                "lng": lng,
+                "geo": geo
             }
             data_by_year[year].append(item)
 
@@ -223,11 +375,70 @@ def process_data():
     with open(output_file, 'w', encoding='utf-8') as out:
         json.dump(data_by_year, out, ensure_ascii=False, indent=None)
 
-    # Copy to public folder as well
-    with open('public/data.json', 'w', encoding='utf-8') as out:
-        json.dump(data_by_year, out, ensure_ascii=False, indent=None)
+    # ------------------------------------------------------------------
+    # Salida partida por año (es lo que consume la app).
+    # Antes se servía un único data.json de 18 MB; ahora la carga inicial se
+    # reduce a un índice diminuto + el año seleccionado (~3,6 MB).
+    # ------------------------------------------------------------------
+    out_dir = os.path.join('public', 'data')
+    os.makedirs(out_dir, exist_ok=True)
+
+    index = {
+        'generatedAt': datetime.date.today().isoformat(),
+        'sourceCsv': os.path.basename(csv_filename),
+        'years': sorted(data_by_year, reverse=True),
+        'byYear': {},
+    }
+    history = {}
+
+    for yr, rows in data_by_year.items():
+        with open(os.path.join(out_dir, f'{yr}.json'), 'w', encoding='utf-8') as out:
+            json.dump(rows, out, ensure_ascii=False, indent=None, separators=(',', ':'))
+
+        index['byYear'][yr] = {
+            'count': len(rows),
+            'ingresos': round(sum(x['ingresos'] for x in rows), 2),
+            'ganancias': round(sum(x['ganancias'] for x in rows), 2),
+            'activos': round(sum(x['activos'] for x in rows), 2),
+            'pasivos': round(sum(x['pasivos'] for x in rows), 2),
+            'patrimonio': round(sum(x['patrimonio'] for x in rows), 2),
+            'perdidas': sum(1 for x in rows if x['ganancias'] < 0),
+        }
+
+        for x in rows:
+            # Historial compacto: [año, rank, ingresos, ganancias, empleados]
+            history.setdefault(x['nit'], []).append(
+                [int(yr), x['rank'], x['ingresos'], x['ganancias'], x['empleados']])
+
+    with open(os.path.join(out_dir, 'index.json'), 'w', encoding='utf-8') as out:
+        json.dump(index, out, ensure_ascii=False, indent=2)
+
+    with open(os.path.join(out_dir, 'history.json'), 'w', encoding='utf-8') as out:
+        json.dump(history, out, ensure_ascii=False, indent=None, separators=(',', ':'))
         
-    print(f"Data processed successfully with employee estimates! Output written to {output_file} and public/data.json.")
+    print('Resumen por año fiscal:')
+    for yr in sorted(data_by_year):
+        rows = data_by_year[yr]
+        ingresos = sum(x['ingresos'] for x in rows)
+        ganancia = sum(x['ganancias'] for x in rows)
+        perdidas = sum(1 for x in rows if x['ganancias'] < 0)
+        print(f'  {yr}: {len(rows):>6,} empresas | ingresos ${ingresos:>10,.2f} B | '
+              f'ganancia neta ${ganancia:>8,.2f} B | con pérdida: {perdidas:,}')
+
+    if PARSE_FAILURES:
+        print(f'\nADVERTENCIA: {len(PARSE_FAILURES)} valores no se pudieron parsear:')
+        for ctx, val in PARSE_FAILURES[:10]:
+            print(f'  {ctx}: {val!r}')
+    else:
+        print('\nSin errores de parseo numérico.')
+
+    print(f'\nOK -> {output_file} (maestro) y public/data/ (índice, historial y un archivo por año)')
+    total_geo = sum(GEO_STATS.values()) or 1
+    print(f'Geocodificación: {GEO_STATS["city"]:,} empresas con coordenada de municipio '
+          f'({GEO_STATS["city"] / total_geo * 100:.1f}%), '
+          f'{GEO_STATS["dept"]:,} al centroide del departamento '
+          f'({GEO_STATS["dept"] / total_geo * 100:.1f}%), '
+          f'{GEO_STATS["default"]:,} sin ubicar.')
 
 if __name__ == '__main__':
     process_data()

@@ -23,3 +23,14 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# Dataset maestro generado por prepare_data.py.
+# La app consume public/data/*.json (que sí se versiona), por eso el
+# archivo monolítico de 18 MB no se sube al repositorio.
+data.json
+*.bak
+
+# Archivos de trabajo que no forman parte de la app
+*.wav
+descarga.png
+Antecedentes*.pdf

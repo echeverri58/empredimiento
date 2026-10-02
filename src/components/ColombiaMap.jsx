@@ -10,7 +10,9 @@ export const ColombiaMap = () => {
 
   const { filteredCompanies, selectedYear, selectedCity, setSelectedCity } = useData();
 
-  // Aggregate companies by city coordinates
+  // Aggregate companies by coordinates.
+  // Si todas las empresas de un punto solo tienen ubicación departamental,
+  // el punto se marca como aproximado y no se etiqueta con una ciudad suelta.
   const cityClusters = useMemo(() => {
     if (!filteredCompanies) return [];
 
@@ -18,7 +20,7 @@ export const ColombiaMap = () => {
     filteredCompanies.forEach((c) => {
       if (!c.lat || !c.lng) return;
       const key = `${c.lat.toFixed(3)},${c.lng.toFixed(3)}`;
-      
+
       if (!clusters[key]) {
         clusters[key] = {
           key,
@@ -26,23 +28,39 @@ export const ColombiaMap = () => {
           dept: c.dept,
           lat: c.lat,
           lng: c.lng,
+          exacta: false,
+          municipios: new Set(),
           totalIngresos: 0,
           totalGanancias: 0,
           companies: []
         };
       }
 
+      clusters[key].municipios.add(c.city);
+      if (c.geo !== 'dept' && c.geo !== 'default') clusters[key].exacta = true;
+
       clusters[key].totalIngresos += c.ingresos || 0;
       clusters[key].totalGanancias += c.ganancias || 0;
       clusters[key].companies.push(c);
     });
 
-    return Object.values(clusters).map((clust) => ({
-      ...clust,
-      totalIngresos: parseFloat(clust.totalIngresos.toFixed(2)),
-      totalGanancias: parseFloat(clust.totalGanancias.toFixed(2)),
-      topCompanies: clust.companies.sort((a, b) => b.ingresos - a.ingresos).slice(0, 5)
-    }));
+    return Object.values(clusters).map((clust) => {
+      const nMunicipios = clust.municipios.size;
+      return {
+        key: clust.key,
+        city: clust.city,
+        dept: clust.dept,
+        lat: clust.lat,
+        lng: clust.lng,
+        exacta: clust.exacta,
+        nMunicipios,
+        etiqueta: clust.exacta ? clust.city : `${clust.dept} (varios municipios)`,
+        totalIngresos: parseFloat(clust.totalIngresos.toFixed(2)),
+        totalGanancias: parseFloat(clust.totalGanancias.toFixed(2)),
+        nEmpresas: clust.companies.length,
+        topCompanies: clust.companies.slice().sort((a, b) => b.ingresos - a.ingresos).slice(0, 5)
+      };
+    });
   }, [filteredCompanies]);
 
   // Initialize Map
@@ -83,24 +101,41 @@ export const ColombiaMap = () => {
 
     cityClusters.forEach((cluster) => {
       const radius = Math.max(6, Math.min(28, Math.sqrt(cluster.totalIngresos) * 2.2));
-      const isSelected = selectedCity === cluster.city;
+      const isSelected = cluster.exacta && selectedCity === cluster.city;
 
       const circle = L.circleMarker([cluster.lat, cluster.lng], {
         radius: radius,
-        fillColor: isSelected ? '#10b981' : cluster.totalIngresos > 20 ? '#059669' : '#0284c7',
-        color: isSelected ? '#34d399' : '#38bdf8',
+        fillColor: isSelected
+          ? '#10b981'
+          : !cluster.exacta
+            ? '#7c3aed'
+            : cluster.totalIngresos > 20
+              ? '#059669'
+              : '#0284c7',
+        color: isSelected ? '#34d399' : cluster.exacta ? '#38bdf8' : '#a78bfa',
         weight: isSelected ? 3 : 1.5,
         opacity: 0.9,
         fillOpacity: isSelected ? 0.85 : 0.65
       });
 
       const popupContent = document.createElement('div');
-      popupContent.className = 'p-1.5 space-y-1.5 min-w-[200px] text-xs';
+      popupContent.className = 'p-1.5 space-y-1.5 min-w-[210px] text-xs';
+
+      const notaAprox = cluster.exacta
+        ? ''
+        : `<p class="text-[10px] text-violet-300">Ubicación aproximada: centroide del departamento (${cluster.nMunicipios} municipios agrupados)</p>`;
+
+      const boton = cluster.exacta
+        ? `<button data-ciudad="${cluster.city}" class="btn-filtrar-ciudad w-full mt-1.5 py-1 px-2 rounded-lg bg-emerald-500 text-slate-950 font-bold text-[11px]">
+             Filtrar por ${cluster.city}
+           </button>`
+        : `<p class="text-[10px] text-slate-500 mt-1">Detalla estos municipios desde el directorio o el buscador.</p>`;
 
       popupContent.innerHTML = `
         <div class="border-b border-slate-700 pb-1">
-          <h4 class="font-bold text-xs text-white">📍 ${cluster.city}</h4>
+          <h4 class="font-bold text-xs text-white">📍 ${cluster.etiqueta}</h4>
           <p class="text-[10px] text-slate-400">${cluster.dept}</p>
+          ${notaAprox}
         </div>
         <div class="space-y-0.5 text-[11px] text-slate-300">
           <div class="flex justify-between">
@@ -109,22 +144,20 @@ export const ColombiaMap = () => {
           </div>
           <div class="flex justify-between">
             <span class="text-slate-400">Empresas:</span>
-            <span class="font-bold text-white">${cluster.companies.length}</span>
+            <span class="font-bold text-white">${cluster.nEmpresas}</span>
           </div>
         </div>
-        <button id="btn-filter-${cluster.city.replace(/[^a-zA-Z0-9]/g, '')}" class="w-full mt-1.5 py-1 px-2 rounded-lg bg-emerald-500 text-slate-950 font-bold text-[11px]">
-          Filtrar por ${cluster.city}
-        </button>
+        ${boton}
       `;
 
       circle.bindPopup(popupContent);
 
       circle.on('popupopen', () => {
-        const btnId = `btn-filter-${cluster.city.replace(/[^a-zA-Z0-9]/g, '')}`;
-        const btn = document.getElementById(btnId);
+        // Búsqueda acotada al propio popup: evita colisiones de id entre puntos
+        const btn = popupContent.querySelector('.btn-filtrar-ciudad');
         if (btn) {
           btn.onclick = () => {
-            setSelectedCity(cluster.city);
+            setSelectedCity(btn.dataset.ciudad);
             circle.closePopup();
           };
         }
@@ -147,7 +180,8 @@ export const ColombiaMap = () => {
             </span>
           </h2>
           <p className="text-[10px] sm:text-xs text-slate-400 mt-0.5">
-            Georreferenciación empresarial en más de 350 municipios de Colombia.
+            {cityClusters.filter((c) => c.exacta).length} municipios con ubicación exacta y{' '}
+            {cityClusters.filter((c) => !c.exacta).length} puntos departamentales aproximados.
           </p>
         </div>
 
@@ -181,6 +215,10 @@ export const ColombiaMap = () => {
           <div className="flex items-center gap-1.5 text-slate-300 text-[10px]">
             <span className="w-2.5 h-2.5 rounded-full bg-sky-600 border border-sky-400 inline-block" />
             <span>Facturación Intermedia</span>
+          </div>
+          <div className="flex items-center gap-1.5 text-slate-300 text-[10px]">
+            <span className="w-2.5 h-2.5 rounded-full bg-violet-600 border border-violet-400 inline-block" />
+            <span>Aproximado (centroide depto.)</span>
           </div>
         </div>
       </div>

@@ -1,11 +1,15 @@
-import React, { createContext, useContext, useState, useEffect, useMemo } from 'react';
+import React, { createContext, useContext, useState, useEffect, useMemo, useCallback } from 'react';
 
 const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
-  const [rawMapData, setRawMapData] = useState({});
+  // Índice ligero (años + totales) y caché de años ya descargados
+  const [yearIndex, setYearIndex] = useState(null);
+  const [yearCache, setYearCache] = useState({});
+  const [historyMap, setHistoryMap] = useState({});
+  const [historyTried, setHistoryTried] = useState(false);
   const [publicEntities, setPublicEntities] = useState([]);
-  const [selectedYear, setSelectedYear] = useState('2024');
+  const [selectedYear, setSelectedYear] = useState('');
   const [selectedSector, setSelectedSector] = useState('ALL');
   const [selectedPublicSector, setSelectedPublicSector] = useState('ALL');
   const [selectedCity, setSelectedCity] = useState('ALL');
@@ -18,11 +22,15 @@ export const DataProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const base = import.meta.env.BASE_URL;
+
+  // 1) Carga inicial ligera: índice de años + entidades públicas
   useEffect(() => {
-    const base = import.meta.env.BASE_URL;
+    let cancelado = false;
+
     Promise.all([
-      fetch(`${base}data.json`).then((res) => {
-        if (!res.ok) throw new Error('Error al cargar empresas privadas');
+      fetch(`${base}data/index.json`).then((res) => {
+        if (!res.ok) throw new Error('Error al cargar el índice de datos');
         return res.json();
       }),
       fetch(`${base}public_entities.json`).then((res) => {
@@ -30,25 +38,78 @@ export const DataProvider = ({ children }) => {
         return res.json();
       })
     ])
-      .then(([privateData, publicData]) => {
-        setRawMapData(privateData);
+      .then(([indice, publicData]) => {
+        if (cancelado) return;
+        setYearIndex(indice);
         setPublicEntities(publicData);
-        setLoading(false);
+
+        // Abrir siempre en el año fiscal más reciente del dataset
+        if (indice.years && indice.years.length) {
+          setSelectedYear(indice.years[0]);
+        } else {
+          setLoading(false);
+        }
       })
       .catch((err) => {
+        if (cancelado) return;
         console.error('Error fetching data:', err);
         setError(err.message);
         setLoading(false);
       });
-  }, []);
 
-  const years = useMemo(() => {
-    return Object.keys(rawMapData).sort().reverse();
-  }, [rawMapData]);
+    return () => { cancelado = true; };
+  }, [base]);
 
-  const currentYearData = useMemo(() => {
-    return rawMapData[selectedYear] || [];
-  }, [rawMapData, selectedYear]);
+  // 2) Año seleccionado: se descarga una sola vez y queda en caché
+  useEffect(() => {
+    if (!selectedYear) return;
+    if (yearCache[selectedYear]) {
+      setLoading(false);
+      return;
+    }
+
+    let cancelado = false;
+    setLoading(true);
+
+    fetch(`${base}data/${selectedYear}.json`)
+      .then((res) => {
+        if (!res.ok) throw new Error(`Error al cargar el año ${selectedYear}`);
+        return res.json();
+      })
+      .then((rows) => {
+        if (cancelado) return;
+        setYearCache((prev) => ({ ...prev, [selectedYear]: rows }));
+        setLoading(false);
+      })
+      .catch((err) => {
+        if (cancelado) return;
+        console.error('Error fetching year:', err);
+        setError(err.message);
+        setLoading(false);
+      });
+
+    return () => { cancelado = true; };
+  }, [selectedYear, base, yearCache]);
+
+  // 3) Historial multi-año en segundo plano (solo lo usa la ficha de empresa).
+  //    Se pide después del primer render para no competir con el año activo.
+  useEffect(() => {
+    if (!yearIndex || historyTried) return;
+
+    const timer = setTimeout(() => {
+      fetch(`${base}data/history.json`)
+        .then((res) => (res.ok ? res.json() : {}))
+        .then((data) => setHistoryMap(data || {}))
+        .catch(() => { /* el historial es opcional */ })
+        .finally(() => setHistoryTried(true));
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, [yearIndex, historyTried, base]);
+
+  const years = useMemo(() => yearIndex?.years || [], [yearIndex]);
+
+  const currentYearData = useMemo(() => yearCache[selectedYear] || [], [yearCache, selectedYear]);
 
   const sectorsList = useMemo(() => {
     if (!currentYearData.length) return [];
@@ -118,6 +179,8 @@ export const DataProvider = ({ children }) => {
     return currentYearData.slice(0, 100);
   }, [currentYearData]);
 
+  const historyLoaded = useMemo(() => Object.keys(historyMap).length > 0, [historyMap]);
+
   const resetFilters = () => {
     setSelectedSector('ALL');
     setSelectedPublicSector('ALL');
@@ -126,16 +189,20 @@ export const DataProvider = ({ children }) => {
     setPublicSearchQuery('');
   };
 
-  const getCompanyHistory = (nit) => {
-    const history = [];
-    years.forEach((yr) => {
-      const item = (rawMapData[yr] || []).find((c) => c.nit === nit);
-      if (item) {
-        history.push(item);
-      }
-    });
-    return history.sort((a, b) => parseInt(a.year) - parseInt(b.year));
-  };
+  // Historial compacto [año, rank, ingresos, ganancias, empleados] -> objetos
+  const getCompanyHistory = useCallback((nit) => {
+    const filas = nit ? historyMap[nit] : null;
+    if (!filas) return [];
+    return filas
+      .map(([year, rank, ingresos, ganancias, empleados]) => ({
+        year: String(year),
+        rank,
+        ingresos,
+        ganancias,
+        empleados
+      }))
+      .sort((a, b) => parseInt(a.year) - parseInt(b.year));
+  }, [historyMap]);
 
   return (
     <DataContext.Provider
@@ -143,6 +210,8 @@ export const DataProvider = ({ children }) => {
         loading,
         error,
         years,
+        yearIndex,
+        historyLoaded,
         selectedYear,
         setSelectedYear,
         selectedSector,
