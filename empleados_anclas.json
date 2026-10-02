@@ -1,0 +1,186 @@
+{
+ "generado": "2026-10-02",
+ "metodo": "Cifras reales publicadas para las mayores empresas: se usan en su año de referencia y se escalan por ingresos en los demas años. El resto de las 10.000 empresas usa el ratio NIIF de facturacion por empleado del macrosector.",
+ "anclas": {
+  "900276962": {
+   "nombre": "D1 S.A.S.",
+   "empleados": 26000,
+   "anio": 2025,
+   "alcance": "colombia",
+   "fuente": "https://forbes.co/2025/10/01/negocios/d1-supera-los-26-000-empleos-formales-el-55-son-mujeres",
+   "confianza": "alta",
+   "nota": "Forbes Colombia (01/10/2025): 'D1 supera los 26.000 empleos formales'. La Republica reporta la misma cifra."
+  },
+  "890900608": {
+   "nombre": "ALMACENES EXITO S.A.",
+   "empleados": 30000,
+   "anio": 2024,
+   "alcance": "colombia",
+   "fuente": "https://www.grupoexito.com.co/es/informe-sostenibilidad-2025.pdf",
+   "confianza": "media-alta",
+   "nota": "La fuente dice 'mas de 30.000 colaboradores(as)' (51,8% mujeres). Es el piso declarado y agregado del Grupo Exito, no desagregado por sociedad."
+  },
+  "860005224": {
+   "nombre": "BAVARIA Y COMPAÑIA SCA",
+   "empleados": 4646,
+   "anio": 2023,
+   "alcance": "colombia",
+   "fuente": "https://www.bavaria.co/sites/g/files/seuoyk1666/files/2024-05/Resumen%20Digital-InformedeSostenibilidad-2023-.pdf",
+   "confianza": "media-alta",
+   "nota": "Cita textual del informe de sostenibilidad: 'En 2023, nuestro equipo fue de 4.646 personas'. Es la operacion en Colombia (no AB InBev global). Existe informe 2024 publicado en abril 2025 sin consultar."
+  },
+  "800021308": {
+   "nombre": "DRUMMOND LTD",
+   "empleados": 5340,
+   "anio": 2023,
+   "alcance": "colombia",
+   "fuente": "http://drummondltd.com/wp-content/uploads/2024/10/Informe-de-Sostenibilidad-2023-Drummond-Ltd-20241024.pdf",
+   "confianza": "alta",
+   "nota": "Texto literal del Informe de Sostenibilidad 2023: 'Al cierre del 2023 contamos con un total de 5.340 empleados'. Es la operacion en Colombia (mineria de carbon)."
+  },
+  "800149695": {
+   "nombre": "DROGUERIAS Y FARMACIAS CRUZ VERDE S.A.S.",
+   "empleados": 10000,
+   "anio": 2025,
+   "alcance": "colombia",
+   "fuente": "https://www.larepublica.co/empresas/cruz-verde-abrio-su-drogueria-1-000-en-colombia-con-mas-de-10-000-colaboradores-4190398",
+   "confianza": "media-alta",
+   "nota": "La Republica: 'Cruz Verde abrio su drogueria 1.000 en Colombia, con mas de 10.000 colaboradores' (jul-2025). Cifra '>10.000', corresponde a Colombia (no al grupo FEMSA)."
+  },
+  "800153993": {
+   "nombre": "COMUNICACIÓN CELULAR S.A.",
+   "empleados": 8402,
+   "anio": 2024,
+   "alcance": "colombia",
+   "fuente": "https://www.claro.com.co/portal/co/recursos/co/pdf/Informe_de_Sostenibilidad_Claro_2024.pdf",
+   "confianza": "alta",
+   "nota": "Texto literal del Informe de Sostenibilidad Claro Colombia 2024: 'nuestro equipo estuvo conformado por 8.402 colaboradores directos'. El mismo informe reporta 49.689 colaboradores indirectos. Se usa la cifra de DIRECTOS."
+  },
+  "900112515": {
+   "nombre": "REFINERIA DE CARTAGENA S.A.",
+   "empleados": 3635,
+   "anio": 2024,
+   "alcance": "colombia",
+   "fuente": "https://www.refineriadecartagena.com.co/Informe%20de%20Gesti%C3%B3n%20y%20Sostenibilidad%202024.pdf",
+   "confianza": "alta",
+   "nota": "Tabla del Informe de Gestion y Sostenibilidad 2024: 'Numero total de colaboradores 3.635' (Refineria de Cartagena 3.527 + GRC 108)."
+  },
+  "899999068": {
+   "nombre": "ECOPETROL S.A.",
+   "empleados": 19581,
+   "anio": 2025,
+   "alcance": "colombia",
+   "fuente": "https://www.sec.gov/Archives/edgar/data/1444406/000110465926053172/ec-20251231x20f.htm",
+   "confianza": "alta",
+   "nota": "Formulario 20-F ante la SEC (auditado): 'As of December 31, 2025, the Ecopetrol Group had 19,581 employees'."
+  },
+  "860001697": {
+   "nombre": "GASEOSAS LUX S.A.S.",
+   "empleados": 11418,
+   "anio": 2023,
+   "alcance": "colombia",
+   "fuente": "https://compite.realrisk.net/wp-content/uploads/2024/07/informe_de_sostenibilidad_postobon_2023.pdf",
+   "confianza": "alta",
+   "nota": "Tabla del informe Postobon: 'Total empleados 11.142 (2021), 11.482 (2022), 11.418 (2023)'."
+  },
+  "890112475": {
+   "nombre": "CI ENERGIA SOLAR S.A. ESWINDOWS",
+   "empleados": 9444,
+   "anio": 2024,
+   "alcance": "colombia",
+   "fuente": "https://www.tecnoglass.com/wp-content/uploads/2025/09/Informe-de-Sostenibilidad-Espan%CC%83ol-2024_compressed-1.pdf",
+   "confianza": "media-alta",
+   "nota": "Informe Tecnoglass 2024: '9.622 Trabajadores Totales: 9.444 COLOMBIA, 164 USA, 12 Panama, 1 Bolivia'. Se toma la operacion de Colombia (matriz de CI Energia Solar)."
+  },
+  "890904224": {
+   "nombre": "C I UNION DE BANANEROS DE URABA S.A.",
+   "empleados": 3800,
+   "anio": 2025,
+   "alcance": "colombia",
+   "fuente": "https://www.uniban.com/wp-content/uploads/Reporte-de-Sostenibilidad-Uniban-2025.pdf",
+   "confianza": "media-alta",
+   "nota": "Reporte Uniban: 'genera oportunidades para mas de 3.800 empleados directos' (cerca de 20.000 personas si se incluyen proveedores; se usa la cifra de DIRECTOS)."
+  },
+  "860025900": {
+   "nombre": "ALPINA PRODUCTOS ALIMENTICIOS S.A.S.",
+   "empleados": 3197,
+   "anio": 2021,
+   "alcance": "colombia",
+   "fuente": "https://alpina.com/static/version1703852335/frontend/Omnipro/alpina/default/docs/sostenibilidad/informes/informer-de-sostenibilidad-alpina-2021-V3.pdf",
+   "confianza": "alta",
+   "nota": "Anexo GRI del informe: 'Numero de empleados directos: 3.774 - Colombia: 3.197 - Ecuador: 512 - Venezuela: 65'. Se toma Colombia."
+  },
+  "900306309": {
+   "nombre": "ARIS MININGPANAMA SEGOVIA S.A.",
+   "empleados": 3234,
+   "anio": 2022,
+   "alcance": "colombia",
+   "fuente": "http://acmineria.com.co/sitio/wp-content/uploads/2024/01/aris-mining-sos-22.pdf",
+   "confianza": "alta",
+   "nota": "Informe de sostenibilidad: 'En 2022 empleamos a un total de 3.234 personas' (operacion Segovia)."
+  },
+  "900092385": {
+   "nombre": "UNE EPM TELECOMUNICACIONES S.A.",
+   "empleados": 2766,
+   "anio": 2024,
+   "alcance": "colombia",
+   "fuente": "https://www.epm.com.co/content/dam/epm/institucional/enajenaci%c3%b3n-de-acciones-de-epm-en-une-e-inversiones-telco/cuarto-datos/informes-de-gestion/4-2-3-informe-gestion-sostenibilidad-2024.pdf",
+   "confianza": "media-alta",
+   "nota": "Informe de gestion y sostenibilidad 2024: 'los 2.766 colaboradores celebraron esta epoca del ano'."
+  },
+  "830126302": {
+   "nombre": "FRONTERA ENERGY COLOMBIA CORP.SUCURSAL COLOMBIA",
+   "empleados": 721,
+   "anio": 2024,
+   "alcance": "colombia",
+   "fuente": "https://www.fronteraenergy.ca/wp-content/uploads/frontera_mx_2024_ESPv_3_compressed.pdf",
+   "confianza": "alta",
+   "nota": "Tabla del informe: 'Total de empleados: 721' (700 empleados + 21 directivos, 2024)."
+  },
+  "830136799": {
+   "nombre": "BIOMAX BIOCOMBUSTIBLES S.A.",
+   "empleados": 746,
+   "anio": 2021,
+   "alcance": "colombia",
+   "fuente": "https://d306pr3pise04h.cloudfront.net/attachments/cop_2022/512857/original/Informe%20de%20sostenibilidad%202021F..pdf",
+   "confianza": "alta",
+   "nota": "'Durante el ano 2020 tuvimos un total de 637 colaboradores, mientras que en el ano 2021 tuvimos 746 colaboradores'."
+  },
+  "860000996": {
+   "nombre": "RACAFE & COMPAÑIA SCA",
+   "empleados": 277,
+   "anio": 2024,
+   "alcance": "colombia",
+   "fuente": "https://racafe.com.co/documents/85/1._RS_Racafe_2024_ES_compressed.pdf",
+   "confianza": "alta",
+   "nota": "'En 2024, contamos con un total de 277 COLABORADORES' (vinculados de manera directa)."
+  },
+  "800245746": {
+   "nombre": "TERMOBARRANQUILLA S.A. E.S.P.",
+   "empleados": 149,
+   "anio": 2024,
+   "alcance": "colombia",
+   "fuente": "https://tebsa.com.co/wp-content/uploads/2025/04/INFORME-DE-SOSTENIBILIDAD-2024-VF-1.pdf",
+   "confianza": "alta",
+   "nota": "Tabla de indicadores del Informe de Sostenibilidad 2024: 'Empleados 149'. [revisar: facturacion por empleado atipica]"
+  },
+  "890201230": {
+   "nombre": "ELECTRIFICADORA DE SANTANDER S.A. E.S.P.",
+   "empleados": 3800,
+   "anio": 2024,
+   "alcance": "colombia",
+   "fuente": "https://www.essa.com.co/site/Portals/0/documentos/transparencia-ita/transparencia-essa/informes-de-sostenibilidad/Informe-de-sostenibilidad-2024-ESSA-web.pdf",
+   "confianza": "media",
+   "nota": "Tabla 'No. trabajadores beneficiados 2.406 (2022), 3.712 (2023), 3.800 (2024)'. Es la cifra de trabajadores cubiertos por programas, que aproxima la plantilla; confianza media."
+  },
+  "830010738": {
+   "nombre": "C.I. SUNSHINE BOUQUET S.A.S.",
+   "empleados": 19914,
+   "anio": 2021,
+   "alcance": "colombia",
+   "fuente": "https://d306pr3pise04h.cloudfront.net/attachments/cop_2022/511328/original/INFORME%20DE%20SOSTENIBILIDAD%20A%20DIC%202021.pdf",
+   "confianza": "media",
+   "nota": "Informe a dic-2021: '19.914 colaboradores' sumando vinculacion directa y temporal (12.975 via empresa temporal Aliados Laboral). Confianza media por incluir temporales."
+  }
+ }
+}

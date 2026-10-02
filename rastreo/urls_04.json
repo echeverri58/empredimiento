@@ -1,0 +1,14 @@
+{
+ "resultados": [
+  {"nombre": "COLOMBIA MOVIL S.A. E.S.P.", "url": "https://comunicacionestigo.com/informegestion/2013.pdf", "tipo": "gestion", "nota": "DESCARTABLE: unico informe indexado es de 2013, demasiado antiguo para el analisis 2021-2025."},
+  {"nombre": "C.I. TRAFIGURA PETROLEUM COLOMBIA S.A.S.", "url": "https://www.trafigura.com/media/svxjrmd1/2024_trafigura_annual_report.pdf", "tipo": "anual", "nota": "La filial colombiana no publica informe propio; es el Annual Report 2024 del grupo (nivel mundial). Probablemente no sirva."},
+  {"nombre": "OPERACIONES Y SERVICIOS DE COMBUSTIBLES S.A.S.", "url": null, "tipo": "otro", "nota": "No se encontro informe oficial publicado."},
+  {"nombre": "ALIMENTOS CARNICOS S.A.S.", "url": "https://www.gruponutresa.com/wp-content/uploads/2024/04/Informe-periodico-de-fin-de-ejercicio-2023-Grupo-Nutresa-F.pdf", "tipo": "gestion", "nota": "Subsidiaria de Grupo Nutresa; el informe es de la matriz (2023). Existe Informe de Sostenibilidad 2024 de Grupo Nutresa en gruponutresa.com."},
+  {"nombre": "AEROVIAS DE INTEGRACION REGIONAL S.A.", "url": null, "tipo": "otro", "nota": "Sin informe oficial de la sociedad colombiana; LATAM publica reporte consolidado del grupo."},
+  {"nombre": "GASEOSAS POSADA TOBON S.A.", "url": "https://informe2024.postobon.com/", "tipo": "sostenibilidad", "nota": "Informe de Sostenibilidad 2024 de Postobon (sitio oficial; PDFs bajo /pdf/)."},
+  {"nombre": "PRICESMART COLOMBIA S.A.S.", "url": "https://www.responsibilityreports.com/HostedData/ResponsibilityReportArchive/p/NASDAQ_PSMT_2021.pdf", "tipo": "sostenibilidad", "nota": "La filial colombiana no publica informe; es el reporte ESG de PriceSmart Inc. (matriz, 2021). Probablemente no sirva."},
+  {"nombre": "UNE EPM TELECOMUNICACIONES S.A.", "url": "https://www.epm.com.co/content/dam/epm/institucional/enajenaci%c3%b3n-de-acciones-de-epm-en-une-e-inversiones-telco/cuarto-datos/informes-de-gestion/4-2-3-informe-gestion-sostenibilidad-2024.pdf", "tipo": "gestion", "nota": "Informe de gestion y sostenibilidad 2024 dentro del expediente de enajenacion de acciones de UNE en EPM; incluye informacion de UNE."},
+  {"nombre": "METROKIA S.A.", "url": null, "tipo": "otro", "nota": "Sin informe oficial publicado."},
+  {"nombre": "HOCOL S.A.", "url": "https://hocol.com.co/file-download/download/public/17254", "tipo": "sostenibilidad", "nota": "Informe de Sostenibilidad de Hocol S.A., servido por el gestor de descargas del sitio oficial."}
+ ]
+}

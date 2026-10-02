@@ -1,0 +1,49 @@
+{
+ "resultados": [
+  {
+   "nombre": "DRUMMOND LTD",
+   "empleados": 5000,
+   "anio": 2023,
+   "alcance": "colombia",
+   "fuente": "http://drummondltd.com/wp-content/uploads/2024/10/Informe-de-Sostenibilidad-2023-Drummond-Ltd-20241024.pdf",
+   "confianza": "alta",
+   "nota": "Informe de Sostenibilidad 2023 de Drummond Ltd: 'nuestros mas de 5 mil empleados directos'. Cifra expresa '>5.000', solo operacion Colombia (mineria de carbon). Existe informe 2024 sin la cifra en los resultados."
+  },
+  {
+   "nombre": "SUPERTIENDAS Y DROGUERIAS OLIMPICA S.A.",
+   "empleados": null,
+   "anio": null,
+   "alcance": "colombia",
+   "fuente": "",
+   "confianza": "",
+   "nota": "Sin cifra verificable. Candidatos sin numero visible: comunicado 'Olimpica celebra 72 anos' y nota de La Republica ('418 almacenes')."
+  },
+  {
+   "nombre": "SODIMAC COLOMBIA S.A.",
+   "empleados": null,
+   "anio": null,
+   "alcance": "colombia",
+   "fuente": "",
+   "confianza": "",
+   "nota": "Sin cifra Colombia-especifica. Solo datos de grupo (Sodimac/Falabella regional) y reporte anual Sodimac Colombia 2019 (desactualizado)."
+  },
+  {
+   "nombre": "OLEODUCTO CENTRAL S.A. - OCENSA",
+   "empleados": null,
+   "anio": null,
+   "alcance": "colombia",
+   "fuente": "https://wbocensa.azurewebsites.net/docs/informe/informe-gestion-sostenibilidad-2024-ocensa.pdf",
+   "confianza": "",
+   "nota": "Fuente identificada (Informe de Gestion y Sostenibilidad 2024 OCENSA) pero sin numero en los resultados de busqueda."
+  },
+  {
+   "nombre": "DROGUERIAS Y FARMACIAS CRUZ VERDE S.A.S.",
+   "empleados": 10000,
+   "anio": 2025,
+   "alcance": "colombia",
+   "fuente": "https://www.larepublica.co/empresas/cruz-verde-abrio-su-drogueria-1-000-en-colombia-con-mas-de-10-000-colaboradores-4190398",
+   "confianza": "media-alta",
+   "nota": "La Republica: 'Cruz Verde abrio su drogueria 1.000 en Colombia, con mas de 10.000 colaboradores' (jul-2025). Cifra '>10.000', corresponde a Colombia (no al grupo FEMSA)."
+  }
+ ]
+}

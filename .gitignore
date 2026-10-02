@@ -34,3 +34,14 @@ data.json
 *.wav
 descarga.png
 Antecedentes*.pdf
+
+# Cache del rastreo de empleados: los PDF oficiales descargados (~540 MB) y el
+# texto extraido se pueden regenerar con rastreo_documentos_lote.py.
+# Lo que SI se versiona es rastreo/urls_*.json, rastreo/lote_*.json y
+# empleados_anclas.json, que son el resultado con sus fuentes.
+rastreo/cache/
+rastreo/texto/
+
+# Python
+__pycache__/
+*.pyc

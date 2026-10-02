@@ -288,17 +288,77 @@ def get_coords(city, dept):
     GEO_STATS['default'] += 1
     return 4.7110, -74.0721, 'default'
 
-def estimate_employees(name, sector, ingresos):
-    name_upper = name.upper()
-    for k, count in KNOWN_HEADCOUNTS.items():
-        if k in name_upper:
-            return count
+# ---------------------------------------------------------------------------
+# Empleados
+# ---------------------------------------------------------------------------
+# El dataset oficial NO trae el número de trabajadores, así que hay que
+# estimarlo. Se hace en dos niveles:
+#
+#   1) Si la empresa tiene una cifra REAL publicada (empleados_anclas.json) se
+#      usa esa cifra en su año de referencia y se ESCALA por ingresos en los
+#      demás años:   empleados(año) = ancla × ingresos(año) / ingresos(año ancla)
+#      Así el número cambia cada año en vez de repetirse.
+#   2) Para el resto se aplica el ratio NIIF del macrosector sobre los ingresos
+#      DE ESE AÑO, de modo que también varía año a año.
+#
+# El ancla se indexa por NIT (solo dígitos) y no por nombre: así no falla por
+# tildes ("PÚBLICAS" vs "PUBLICAS") ni se aplica el mismo dato a varias razones
+# sociales del mismo grupo.
+
+ANCLAS_PATH = 'empleados_anclas.json'
+ANCLAS = {}
+INGRESOS_POR_NIT = {}
+
+EMP_STATS = {'ancla': 0, 'ratio': 0, 'piso': 0, 'tope': 0}
+
+
+def solo_digitos(txt):
+    return re.sub(r'\D', '', str(txt or ''))
+
+
+def cargar_anclas():
+    """Carga las cifras reales de empleados rastreadas para las mayores empresas."""
+    global ANCLAS
+    if not os.path.exists(ANCLAS_PATH):
+        print(f'  Aviso: no existe {ANCLAS_PATH} -> todas las empresas usan el ratio NIIF.\n')
+        return
+    with open(ANCLAS_PATH, encoding='utf-8') as f:
+        payload = json.load(f)
+    ANCLAS = {solo_digitos(k): v for k, v in payload.get('anclas', {}).items()}
+    print(f'  Anclas reales cargadas: {len(ANCLAS)} empresas '
+          f'(rastreo del {payload.get("generado", "?")})\n')
+
+
+def estimate_employees(nit, sector, ingresos, year):
+    """Empleados del año indicado: ancla real escalada o ratio NIIF."""
+    clave = solo_digitos(nit)
+    ancla = ANCLAS.get(clave)
+    if ancla:
+        anio_ref = str(ancla.get('anio', ''))
+        ing_ref = INGRESOS_POR_NIT.get(clave, {}).get(anio_ref)
+        if ing_ref:
+            est = int(round(ancla['empleados'] * ingresos / ing_ref))
+            if est < 15:
+                EMP_STATS['piso'] += 1
+                return 15
+            if est > 250000:
+                EMP_STATS['tope'] += 1
+                return 250000
+            EMP_STATS['ancla'] += 1
+            return est
 
     rev_per_emp = SECTOR_REVENUE_PER_EMP.get(sector, 0.0004)
     if ingresos <= 0:
         return 50
     estimated = int(ingresos / rev_per_emp)
-    return max(15, min(60000, estimated))
+    if estimated < 15:
+        EMP_STATS['piso'] += 1
+        return 15
+    if estimated > 250000:
+        EMP_STATS['tope'] += 1
+        return 250000
+    EMP_STATS['ratio'] += 1
+    return estimated
 
 CSV_PATTERN = '10.000_Empresas_mas_Grandes_del_País_*.csv'
 
@@ -321,6 +381,18 @@ def process_data():
         print(f'  - {path}')
     csv_filename = csv_files[-1]
     print(f'-> Usando el más reciente: {csv_filename}\n')
+    cargar_anclas()
+
+    # Primera pasada: indexar ingresos por empresa y año. Hace falta ANTES de
+    # calcular empleados, porque las anclas reales se escalan por ingresos
+    # entre el año de referencia y cada año fiscal.
+    with open(csv_filename, mode='r', encoding='utf-8-sig') as f:
+        for r in csv.DictReader(f):
+            clave = solo_digitos(r['NIT'])
+            anio = r['Año de Corte'].replace(',', '').strip()
+            INGRESOS_POR_NIT.setdefault(clave, {})[anio] = parse_float(
+                r['INGRESOS OPERACIONALES'])
+    print(f'  Ingresos indexados para {len(INGRESOS_POR_NIT):,} empresas\n')
     data_by_year = {}
     
     with open(csv_filename, mode='r', encoding='utf-8-sig') as f:
@@ -342,7 +414,7 @@ def process_data():
             name = r['RAZÓN SOCIAL'].strip()
 
             lat, lng, geo = get_coords(ciudad, depto)
-            empleados = estimate_employees(name, sector, ingresos)
+            empleados = estimate_employees(r['NIT'], sector, ingresos, year)
             
             item = {
                 "nit": r['NIT'].strip(),
@@ -433,6 +505,13 @@ def process_data():
         print('\nSin errores de parseo numérico.')
 
     print(f'\nOK -> {output_file} (maestro) y public/data/ (índice, historial y un archivo por año)')
+    total_emp = sum(EMP_STATS.values()) or 1
+    print(f'Empleados: {EMP_STATS["ancla"]:,} registros con ancla real escalada '
+          f'({EMP_STATS["ancla"] / total_emp * 100:.1f}%), '
+          f'{EMP_STATS["ratio"]:,} por ratio NIIF '
+          f'({EMP_STATS["ratio"] / total_emp * 100:.1f}%), '
+          f'{EMP_STATS["piso"]:,} en el mínimo de 15, '
+          f'{EMP_STATS["tope"]:,} en el tope.')
     total_geo = sum(GEO_STATS.values()) or 1
     print(f'Geocodificación: {GEO_STATS["city"]:,} empresas con coordenada de municipio '
           f'({GEO_STATS["city"] / total_geo * 100:.1f}%), '

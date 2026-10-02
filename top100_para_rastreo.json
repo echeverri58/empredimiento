@@ -1,0 +1,1276 @@
+[
+ {
+  "rank": 1,
+  "name": "ECOPETROL S.A.",
+  "nit": "899,999,068",
+  "sector": "MINERO",
+  "ingresos": {
+   "2021": 84.95,
+   "2022": 144.82,
+   "2023": 129.51,
+   "2024": 113.92,
+   "2025": 100.59
+  }
+ },
+ {
+  "rank": 2,
+  "name": "ORGANIZACIÓN TERPEL S.A.",
+  "nit": "830,095,213",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 17.01,
+   "2022": 23.6,
+   "2023": 23.05,
+   "2024": 24.75,
+   "2025": 26.4
+  }
+ },
+ {
+  "rank": 3,
+  "name": "REFINERIA DE CARTAGENA S.A.",
+  "nit": "900,112,515",
+  "sector": "MANUFACTURA",
+  "ingresos": {
+   "2021": 15.5,
+   "2022": 27.86,
+   "2023": 32.05,
+   "2024": 25.86,
+   "2025": 22.4
+  }
+ },
+ {
+  "rank": 4,
+  "name": "D1 S.A.S.",
+  "nit": "900,276,962",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 9.95,
+   "2022": 13.96,
+   "2023": 17.42,
+   "2024": 19.44,
+   "2025": 21.61
+  }
+ },
+ {
+  "rank": 5,
+  "name": "EMPRESAS PÚBLICAS DE MEDELLÍN E.S.P.",
+  "nit": "890,904,996",
+  "sector": "SERVICIOS",
+  "ingresos": {
+   "2021": 12.87,
+   "2022": 15.07,
+   "2023": 17.78,
+   "2024": 20.57,
+   "2025": 20.29
+  }
+ },
+ {
+  "rank": 6,
+  "name": "ALMACENES EXITO S.A.",
+  "nit": "890,900,608",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 13.03,
+   "2022": 15.13,
+   "2023": 15.73,
+   "2024": 16.08,
+   "2025": 16.92
+  }
+ },
+ {
+  "rank": 7,
+  "name": "JERONIMO MARTINS COLOMBIA S.A.S.",
+  "nit": "900,480,569",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 5.34,
+   "2022": 8.62,
+   "2023": 12.35,
+   "2024": 13.83,
+   "2025": 16.37
+  }
+ },
+ {
+  "rank": 8,
+  "name": "COMUNICACIÓN CELULAR S.A.",
+  "nit": "800,153,993",
+  "sector": "SERVICIOS",
+  "ingresos": {
+   "2021": 14.64,
+   "2022": 14.63,
+   "2023": 14.85,
+   "2024": 15.6,
+   "2025": 16.35
+  }
+ },
+ {
+  "rank": 9,
+  "name": "AEROVIAS DEL CONTINENTE AMERICANO S.A. AVIANCA PUDIENDO UTILIZAR LAS SIGLAS AVIANCA O AVIANCA S.A.",
+  "nit": "890,100,577",
+  "sector": "SERVICIOS",
+  "ingresos": {
+   "2021": 4.39,
+   "2022": 11.44,
+   "2023": 27.15,
+   "2024": 15.11,
+   "2025": 15.12
+  }
+ },
+ {
+  "rank": 10,
+  "name": "EMGESA S.A. E.S.P.",
+  "nit": "860,063,875",
+  "sector": "SERVICIOS",
+  "ingresos": {
+   "2021": 4.73,
+   "2022": 10.87,
+   "2023": 15.31,
+   "2024": 15.78,
+   "2025": 14.85
+  }
+ },
+ {
+  "rank": 11,
+  "name": "COLOMBIANA DE COMERCIO S.A.",
+  "nit": "890,900,943",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 9.09,
+   "2022": 11.14,
+   "2023": 11.15,
+   "2024": 11.89,
+   "2025": 14.58
+  }
+ },
+ {
+  "rank": 12,
+  "name": "KOPPS COMERCIAL S.A.S.",
+  "nit": "900,818,921",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 7.96,
+   "2022": 9.66,
+   "2023": 10.79,
+   "2024": 11.94,
+   "2025": 12.98
+  }
+ },
+ {
+  "rank": 13,
+  "name": "PRIMAX COLOMBIA S.A.",
+  "nit": "860,002,554",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 6.1,
+   "2022": 7.76,
+   "2023": 9.05,
+   "2024": 10.52,
+   "2025": 11.06
+  }
+ },
+ {
+  "rank": 14,
+  "name": "CENIT TRANSPORTE Y LOGÍSTICA DE HIDROCARBUROS S.A.S.",
+  "nit": "900,531,210",
+  "sector": "SERVICIOS",
+  "ingresos": {
+   "2021": 8.05,
+   "2022": 8.53,
+   "2023": 9.94,
+   "2024": 9.98,
+   "2025": 9.93
+  }
+ },
+ {
+  "rank": 15,
+  "name": "BAVARIA Y COMPAÑIA SCA",
+  "nit": "860,005,224",
+  "sector": "MANUFACTURA",
+  "ingresos": {
+   "2021": 6.0,
+   "2022": 6.96,
+   "2023": 8.01,
+   "2024": 8.62,
+   "2025": 9.34
+  }
+ },
+ {
+  "rank": 16,
+  "name": "DRUMMOND LTD",
+  "nit": "800,021,308",
+  "sector": "MINERO",
+  "ingresos": {
+   "2021": 8.49,
+   "2022": 15.27,
+   "2023": 15.51,
+   "2024": 11.5,
+   "2025": 7.86
+  }
+ },
+ {
+  "rank": 17,
+  "name": "SUPERTIENDAS Y DROGUERIAS OLIMPICA S.A.",
+  "nit": "890,107,487",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 6.63,
+   "2022": 7.78,
+   "2023": 7.88,
+   "2024": 7.13,
+   "2025": 7.05
+  }
+ },
+ {
+  "rank": 18,
+  "name": "SODIMAC COLOMBIA S.A.",
+  "nit": "800,242,106",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 5.25,
+   "2022": 5.99,
+   "2023": 5.77,
+   "2024": 5.99,
+   "2025": 6.94
+  }
+ },
+ {
+  "rank": 19,
+  "name": "OLEODUCTO CENTRAL S.A.",
+  "nit": "800,251,163",
+  "sector": "SERVICIOS",
+  "ingresos": {
+   "2021": 4.62,
+   "2022": 5.52,
+   "2023": 6.14,
+   "2024": 5.98,
+   "2025": 6.29
+  }
+ },
+ {
+  "rank": 20,
+  "name": "DROGUERIAS Y FARMACIAS CRUZ VERDE S.A.S.",
+  "nit": "800,149,695",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 3.3,
+   "2022": 4.28,
+   "2023": 5.15,
+   "2024": 5.51,
+   "2025": 6.2
+  }
+ },
+ {
+  "rank": 21,
+  "name": "COLOMBIA TELECOMUNICACIONES S.A. E.S.P. - TELEFONICA",
+  "nit": "830,122,566",
+  "sector": "SERVICIOS",
+  "ingresos": {
+   "2021": 5.91,
+   "2022": 7.86,
+   "2023": 7.12,
+   "2024": 6.67,
+   "2025": 6.19
+  }
+ },
+ {
+  "rank": 22,
+  "name": "CEMENTOS ARGOS S.A.",
+  "nit": "890,100,251",
+  "sector": "MANUFACTURA",
+  "ingresos": {
+   "2021": 2.32,
+   "2022": 2.48,
+   "2023": 2.9,
+   "2024": 1.84,
+   "2025": 5.96
+  }
+ },
+ {
+  "rank": 23,
+  "name": "CARIBEMAR DE LA COSTA S.A.S. E.S.P.",
+  "nit": "901,380,949",
+  "sector": "SERVICIOS",
+  "ingresos": {
+   "2023": 5.96,
+   "2024": 6.35,
+   "2025": 5.61
+  }
+ },
+ {
+  "rank": 24,
+  "name": "CHEVRON PETROLEUM COMPANY",
+  "nit": "860,005,223",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 3.44,
+   "2022": 4.47,
+   "2023": 5.72,
+   "2024": 5.87,
+   "2025": 5.58
+  }
+ },
+ {
+  "rank": 25,
+  "name": "METRO LINEA 1 S.A.S.",
+  "nit": "901,339,011",
+  "sector": "CONSTRUCCIÓN",
+  "ingresos": {
+   "2023": 1.41,
+   "2024": 2.32,
+   "2025": 5.33
+  }
+ },
+ {
+  "rank": 26,
+  "name": "INDUSTRIA NACIONAL DE GASEOSAS S.A.",
+  "nit": "890,903,858",
+  "sector": "MANUFACTURA",
+  "ingresos": {
+   "2021": 3.1,
+   "2022": 4.05,
+   "2023": 4.88,
+   "2024": 5.16,
+   "2025": 5.32
+  }
+ },
+ {
+  "rank": 27,
+  "name": "ISAGEN S.A. E.S.P.",
+  "nit": "811,000,740",
+  "sector": "SERVICIOS",
+  "ingresos": {
+   "2021": 3.49,
+   "2022": 4.82,
+   "2023": 5.53,
+   "2024": 6.14,
+   "2025": 5.24
+  }
+ },
+ {
+  "rank": 28,
+  "name": "CELSIA COLOMBIA S.A. E.S.P. ANTES EMPRESA DE ENERGIA DEL PACIFICO S.A. E.S.P.- EPSA",
+  "nit": "800,249,860",
+  "sector": "SERVICIOS",
+  "ingresos": {
+   "2021": 3.58,
+   "2022": 4.92,
+   "2023": 5.48,
+   "2024": 6.55,
+   "2025": 5.07
+  }
+ },
+ {
+  "rank": 29,
+  "name": "VANTI S.A. ESP",
+  "nit": "800,007,813",
+  "sector": "SERVICIOS",
+  "ingresos": {
+   "2021": 2.95,
+   "2022": 3.37,
+   "2023": 3.83,
+   "2025": 4.73
+  }
+ },
+ {
+  "rank": 30,
+  "name": "CARBONES DEL CERREJON LIMITED",
+  "nit": "860,069,804",
+  "sector": "MINERO",
+  "ingresos": {
+   "2021": 6.56,
+   "2022": 16.39,
+   "2023": 7.47,
+   "2024": 6.05,
+   "2025": 4.67
+  }
+ },
+ {
+  "rank": 31,
+  "name": "BIOMAX BIOCOMBUSTIBLES S.A.",
+  "nit": "830,136,799",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 2.67,
+   "2022": 3.09,
+   "2023": 3.76,
+   "2024": 4.51,
+   "2025": 4.51
+  }
+ },
+ {
+  "rank": 32,
+  "name": "CENCOSUD COLOMBIA S.A.",
+  "nit": "900,155,107",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 4.15,
+   "2022": 4.64,
+   "2023": 4.43,
+   "2024": 4.21,
+   "2025": 4.44
+  }
+ },
+ {
+  "rank": 33,
+  "name": "DISTRACOM S.A.",
+  "nit": "811,009,788",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 2.25,
+   "2022": 2.77,
+   "2023": 3.38,
+   "2024": 3.87,
+   "2025": 4.3
+  }
+ },
+ {
+  "rank": 34,
+  "name": "GRUPO ENERGÍA DE BOGOTÁ S.A. E.S.P.",
+  "nit": "899,999,082",
+  "sector": "SERVICIOS",
+  "ingresos": {
+   "2021": 3.26,
+   "2022": 3.59,
+   "2023": 3.71,
+   "2024": 3.72,
+   "2025": 4.26
+  }
+ },
+ {
+  "rank": 35,
+  "name": "CONTINENTAL GOLD LIMITED SUCURSAL COLOMBIA",
+  "nit": "900,166,687",
+  "sector": "MINERO",
+  "ingresos": {
+   "2021": 1.36,
+   "2022": 1.88,
+   "2023": 2.28,
+   "2024": 2.9,
+   "2025": 4.16
+  }
+ },
+ {
+  "rank": 36,
+  "name": "AUTOMOTORES TOYOTA COLOMBIA S.A.S.",
+  "nit": "900,780,510",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 2.17,
+   "2022": 3.58,
+   "2023": 4.16,
+   "2024": 4.03,
+   "2025": 3.92
+  }
+ },
+ {
+  "rank": 37,
+  "name": "ITALCOL S.A. ITALCOL S.A.",
+  "nit": "860,026,895",
+  "sector": "MANUFACTURA",
+  "ingresos": {
+   "2021": 2.59,
+   "2022": 3.44,
+   "2023": 3.67,
+   "2024": 3.19,
+   "2025": 3.82
+  }
+ },
+ {
+  "rank": 38,
+  "name": "FRONTERA ENERGY COLOMBIA CORP.SUCURSAL COLOMBIA",
+  "nit": "830,126,302",
+  "sector": "MINERO",
+  "ingresos": {
+   "2021": 3.15,
+   "2022": 5.15,
+   "2023": 4.61,
+   "2024": 4.25,
+   "2025": 3.8
+  }
+ },
+ {
+  "rank": 39,
+  "name": "INTERCONEXIÓN ELÉCTRICA S.A. E.S.P. - ISA",
+  "nit": "860,016,610",
+  "sector": "SERVICIOS",
+  "ingresos": {
+   "2021": 2.75,
+   "2022": 3.32,
+   "2023": 3.74,
+   "2024": 4.13,
+   "2025": 3.71
+  }
+ },
+ {
+  "rank": 40,
+  "name": "SAMSUNG ELECTRONICS COLOMBIA S.A. SAMSUNG ELECTRONICS COLOMBIA S.A.",
+  "nit": "830,028,931",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 3.74,
+   "2022": 4.34,
+   "2023": 3.13,
+   "2024": 3.19,
+   "2025": 3.62
+  }
+ },
+ {
+  "rank": 41,
+  "name": "EMPRESAS MUNICIPALES DE CALI   E.I.C.E  E.S.P",
+  "nit": "890,399,003",
+  "sector": "SERVICIOS",
+  "ingresos": {
+   "2023": 3.33,
+   "2025": 3.61
+  }
+ },
+ {
+  "rank": 42,
+  "name": "TECNOQUIMICAS S.A.",
+  "nit": "890,300,466",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 2.21,
+   "2022": 2.82,
+   "2023": 3.04,
+   "2024": 3.13,
+   "2025": 3.54
+  }
+ },
+ {
+  "rank": 43,
+  "name": "PETROLEOS DEL MILENIO S.A.S. SIGLA PETROMIL S.A.S.",
+  "nit": "819,001,667",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2023": 2.21,
+   "2024": 3.03,
+   "2025": 3.51
+  }
+ },
+ {
+  "rank": 44,
+  "name": "GASEOSAS LUX S.A.S.",
+  "nit": "860,001,697",
+  "sector": "MANUFACTURA",
+  "ingresos": {
+   "2021": 2.01,
+   "2022": 2.55,
+   "2023": 2.87,
+   "2024": 3.05,
+   "2025": 3.45
+  }
+ },
+ {
+  "rank": 45,
+  "name": "SURAMERICA COMERCIAL S.A.S.",
+  "nit": "900,943,243",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 0.98,
+   "2022": 1.7,
+   "2023": 2.42,
+   "2024": 2.87,
+   "2025": 3.37
+  }
+ },
+ {
+  "rank": 46,
+  "name": "RENAULT SOCIEDAD DE FABRICACION DE AUTOMOTORES S.A.S.",
+  "nit": "860,025,792",
+  "sector": "MANUFACTURA",
+  "ingresos": {
+   "2021": 2.57,
+   "2022": 3.73,
+   "2023": 2.82,
+   "2024": 2.43,
+   "2025": 3.33
+  }
+ },
+ {
+  "rank": 47,
+  "name": "ARIS MININGPANAMA SEGOVIA S.A.",
+  "nit": "900,306,309",
+  "sector": "MINERO",
+  "ingresos": {
+   "2021": 1.42,
+   "2022": 1.69,
+   "2023": 1.73,
+   "2024": 1.87,
+   "2025": 3.28
+  }
+ },
+ {
+  "rank": 48,
+  "name": "COMERCIALIZADORA INTERNACIONAL ESLOP S.A.S.",
+  "nit": "901,019,586",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 0.3,
+   "2022": 0.47,
+   "2023": 0.75,
+   "2024": 1.98,
+   "2025": 3.22
+  }
+ },
+ {
+  "rank": 49,
+  "name": "VERANO ENERGY BARBADOS LIMITED SUCURSAL",
+  "nit": "900,331,322",
+  "sector": "MINERO",
+  "ingresos": {
+   "2021": 2.76,
+   "2022": 4.72,
+   "2023": 5.41,
+   "2024": 5.48,
+   "2025": 3.17
+  }
+ },
+ {
+  "rank": 50,
+  "name": "CONTEGRAL S.A.S.",
+  "nit": "890,901,271",
+  "sector": "MANUFACTURA",
+  "ingresos": {
+   "2021": 2.72,
+   "2022": 3.52,
+   "2023": 3.66,
+   "2024": 2.84,
+   "2025": 3.12
+  }
+ },
+ {
+  "rank": 51,
+  "name": "COLOMBIA MOVIL S.A. E.S.P.",
+  "nit": "830,114,921",
+  "sector": "SERVICIOS",
+  "ingresos": {
+   "2021": 2.32,
+   "2022": 2.62,
+   "2023": 2.7,
+   "2024": 2.96,
+   "2025": 3.11
+  }
+ },
+ {
+  "rank": 52,
+  "name": "C.I. TRAFIGURA PETROLEUM COLOMBIA S.A.S.",
+  "nit": "900,585,067",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 4.03,
+   "2022": 6.57,
+   "2023": 6.33,
+   "2024": 4.87,
+   "2025": 3.1
+  }
+ },
+ {
+  "rank": 53,
+  "name": "OPERACIONES Y SERVICIOS DE COMBUSTIBLES S.A.S.",
+  "nit": "900,491,889",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 1.32,
+   "2022": 1.62,
+   "2023": 2.02,
+   "2024": 2.76,
+   "2025": 3.08
+  }
+ },
+ {
+  "rank": 54,
+  "name": "ALIMENTOS CARNICOS S.A.S.",
+  "nit": "890,304,130",
+  "sector": "MANUFACTURA",
+  "ingresos": {
+   "2021": 2.22,
+   "2022": 2.78,
+   "2023": 2.94,
+   "2024": 2.84,
+   "2025": 2.96
+  }
+ },
+ {
+  "rank": 55,
+  "name": "AEROVIAS DE INTEGRACION REGIONAL S.A.",
+  "nit": "890,704,196",
+  "sector": "SERVICIOS",
+  "ingresos": {
+   "2023": 4.49,
+   "2024": 2.33,
+   "2025": 2.96
+  }
+ },
+ {
+  "rank": 56,
+  "name": "GASEOSAS POSADA TOBON S.A.",
+  "nit": "890,903,939",
+  "sector": "MANUFACTURA",
+  "ingresos": {
+   "2021": 2.04,
+   "2022": 2.6,
+   "2023": 2.94,
+   "2024": 2.85,
+   "2025": 2.87
+  }
+ },
+ {
+  "rank": 57,
+  "name": "PRICESMART COLOMBIA S.A.S.",
+  "nit": "900,319,753",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 1.67,
+   "2022": 1.99,
+   "2023": 2.06,
+   "2024": 2.36,
+   "2025": 2.77
+  }
+ },
+ {
+  "rank": 58,
+  "name": "UNE EPM TELECOMUNICACIONES S.A.",
+  "nit": "900,092,385",
+  "sector": "SERVICIOS",
+  "ingresos": {
+   "2021": 2.76,
+   "2022": 2.76,
+   "2023": 2.79,
+   "2024": 2.63,
+   "2025": 2.75
+  }
+ },
+ {
+  "rank": 59,
+  "name": "METROKIA S.A.",
+  "nit": "830,078,966",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 0.91,
+   "2022": 1.27,
+   "2023": 1.1,
+   "2024": 1.9,
+   "2025": 2.72
+  }
+ },
+ {
+  "rank": 60,
+  "name": "HOCOL S.A.",
+  "nit": "860,072,134",
+  "sector": "MINERO",
+  "ingresos": {
+   "2021": 2.33,
+   "2022": 3.25,
+   "2023": 2.79,
+   "2024": 2.66,
+   "2025": 2.68
+  }
+ },
+ {
+  "rank": 61,
+  "name": "CI ENERGIA SOLAR S.A. ESWINDOWS",
+  "nit": "890,112,475",
+  "sector": "MANUFACTURA",
+  "ingresos": {
+   "2021": 1.41,
+   "2022": 2.47,
+   "2023": 2.74,
+   "2024": 2.62,
+   "2025": 2.65
+  }
+ },
+ {
+  "rank": 62,
+  "name": "TELEPERFORMANCE COLOMBIA S.A.S.",
+  "nit": "900,323,853",
+  "sector": "SERVICIOS",
+  "ingresos": {
+   "2021": 2.14,
+   "2022": 2.63,
+   "2023": 2.56,
+   "2024": 2.66,
+   "2025": 2.63
+  }
+ },
+ {
+  "rank": 63,
+  "name": "TAMPA CARGO S.A.S.",
+  "nit": "890,912,462",
+  "sector": "SERVICIOS",
+  "ingresos": {
+   "2022": 2.55,
+   "2023": 4.9,
+   "2024": 2.4,
+   "2025": 2.63
+  }
+ },
+ {
+  "rank": 64,
+  "name": "AVSA S.A.",
+  "nit": "890,201,881",
+  "sector": "AGROPECUARIO",
+  "ingresos": {
+   "2021": 1.75,
+   "2022": 2.11,
+   "2023": 2.22,
+   "2024": 2.42,
+   "2025": 2.62
+  }
+ },
+ {
+  "rank": 65,
+  "name": "OLAM AGRO COLOMBIA S.A.S.",
+  "nit": "900,110,594",
+  "sector": "MANUFACTURA",
+  "ingresos": {
+   "2021": 1.11,
+   "2022": 1.94,
+   "2023": 1.24,
+   "2024": 1.43,
+   "2025": 2.6
+  }
+ },
+ {
+  "rank": 66,
+  "name": "TERMOBARRANQUILLA S.A. E.S.P.",
+  "nit": "800,245,746",
+  "sector": "SERVICIOS",
+  "ingresos": {
+   "2023": 3.77,
+   "2024": 4.17,
+   "2025": 2.59
+  }
+ },
+ {
+  "rank": 67,
+  "name": "TERPEL EXPORTACIONES S.A.S.",
+  "nit": "901,210,452",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 0.5,
+   "2022": 2.27,
+   "2023": 2.7,
+   "2024": 2.46,
+   "2025": 2.59
+  }
+ },
+ {
+  "rank": 68,
+  "name": "ITALCOL DE OCCIDENTE S.A.",
+  "nit": "891,304,762",
+  "sector": "MANUFACTURA",
+  "ingresos": {
+   "2021": 1.69,
+   "2022": 2.25,
+   "2023": 2.53,
+   "2024": 2.28,
+   "2025": 2.58
+  }
+ },
+ {
+  "rank": 69,
+  "name": "FALABELLA DE COLOMBIA S.A.",
+  "nit": "900,017,447",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 2.21,
+   "2022": 2.52,
+   "2023": 2.24,
+   "2024": 2.31,
+   "2025": 2.54
+  }
+ },
+ {
+  "rank": 70,
+  "name": "C I UNION DE BANANEROS DE URABA S.A.",
+  "nit": "890,904,224",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 1.8,
+   "2022": 1.85,
+   "2023": 1.98,
+   "2024": 2.05,
+   "2025": 2.52
+  }
+ },
+ {
+  "rank": 71,
+  "name": "GASES DEL CARIBE S.A. EMPRESA DE SERVICIOS PUBLICOS",
+  "nit": "890,101,691",
+  "sector": "SERVICIOS",
+  "ingresos": {
+   "2023": 2.23,
+   "2024": 2.64,
+   "2025": 2.51
+  }
+ },
+ {
+  "rank": 72,
+  "name": "INDUSTRIA COLOMBIANA DE CAFE S.A.S.",
+  "nit": "890,903,532",
+  "sector": "MANUFACTURA",
+  "ingresos": {
+   "2021": 1.25,
+   "2022": 2.05,
+   "2023": 2.06,
+   "2024": 1.8,
+   "2025": 2.51
+  }
+ },
+ {
+  "rank": 73,
+  "name": "ALIMENTOS FINCA S.A.S.",
+  "nit": "860,004,828",
+  "sector": "MANUFACTURA",
+  "ingresos": {
+   "2021": 1.98,
+   "2022": 2.64,
+   "2023": 2.57,
+   "2024": 2.06,
+   "2025": 2.49
+  }
+ },
+ {
+  "rank": 74,
+  "name": "GRUPO ARGOS S.A.",
+  "nit": "890,900,266",
+  "sector": "SERVICIOS",
+  "ingresos": {
+   "2021": 0.65,
+   "2022": 0.78,
+   "2023": 1.43,
+   "2024": 3.54,
+   "2025": 2.49
+  }
+ },
+ {
+  "rank": 75,
+  "name": "COLGATE PALMOLIVE COMPAÑIA",
+  "nit": "890,300,546",
+  "sector": "MANUFACTURA",
+  "ingresos": {
+   "2021": 1.6,
+   "2022": 1.99,
+   "2023": 2.32,
+   "2024": 2.38,
+   "2025": 2.47
+  }
+ },
+ {
+  "rank": 76,
+  "name": "INTERCOLOMBIA S.A. E.S.P",
+  "nit": "900,667,590",
+  "sector": "SERVICIOS",
+  "ingresos": {
+   "2023": 2.12,
+   "2024": 2.37,
+   "2025": 2.45
+  }
+ },
+ {
+  "rank": 77,
+  "name": "DIANA CORPORACION S.A.S.",
+  "nit": "860,031,606",
+  "sector": "MANUFACTURA",
+  "ingresos": {
+   "2021": 1.69,
+   "2022": 2.43,
+   "2023": 2.6,
+   "2024": 2.49,
+   "2025": 2.43
+  }
+ },
+ {
+  "rank": 78,
+  "name": "COMERCIAL NUTRESA S.A.S.",
+  "nit": "900,341,086",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 0.52,
+   "2022": 0.66,
+   "2023": 0.74,
+   "2024": 1.73,
+   "2025": 2.41
+  }
+ },
+ {
+  "rank": 79,
+  "name": "AMARILO S.A.S.",
+  "nit": "800,185,295",
+  "sector": "CONSTRUCCIÓN",
+  "ingresos": {
+   "2021": 1.33,
+   "2022": 1.2,
+   "2023": 1.93,
+   "2024": 2.19,
+   "2025": 2.39
+  }
+ },
+ {
+  "rank": 80,
+  "name": "POLLOS EL BUCANERO S.A.",
+  "nit": "800,197,463",
+  "sector": "MANUFACTURA",
+  "ingresos": {
+   "2021": 1.55,
+   "2022": 1.96,
+   "2023": 2.18,
+   "2024": 2.27,
+   "2025": 2.39
+  }
+ },
+ {
+  "rank": 81,
+  "name": "MAZDA DE COLOMBIA S.A.S.",
+  "nit": "900,703,240",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 1.67,
+   "2022": 1.61,
+   "2023": 1.92,
+   "2024": 1.87,
+   "2025": 2.38
+  }
+ },
+ {
+  "rank": 82,
+  "name": "SOLLA S.A.",
+  "nit": "890,900,291",
+  "sector": "MANUFACTURA",
+  "ingresos": {
+   "2021": 2.03,
+   "2022": 2.67,
+   "2023": 2.59,
+   "2024": 2.21,
+   "2025": 2.38
+  }
+ },
+ {
+  "rank": 83,
+  "name": "MERCADOLIBRE COLOMBIA LIMITADA.",
+  "nit": "830,067,394",
+  "sector": "SERVICIOS",
+  "ingresos": {
+   "2021": 0.77,
+   "2022": 1.04,
+   "2023": 1.45,
+   "2024": 1.86,
+   "2025": 2.37
+  }
+ },
+ {
+  "rank": 84,
+  "name": "GENERAL MOTORS COLMOTORES S.A.",
+  "nit": "860,002,304",
+  "sector": "MANUFACTURA",
+  "ingresos": {
+   "2021": 2.39,
+   "2022": 3.57,
+   "2023": 2.57,
+   "2024": 1.21,
+   "2025": 2.34
+  }
+ },
+ {
+  "rank": 85,
+  "name": "ESENTTIA S.A.",
+  "nit": "800,059,470",
+  "sector": "MANUFACTURA",
+  "ingresos": {
+   "2021": 3.87,
+   "2022": 3.7,
+   "2023": 2.75,
+   "2024": 2.31,
+   "2025": 2.32
+  }
+ },
+ {
+  "rank": 86,
+  "name": "ALPINA PRODUCTOS ALIMENTICIOS S.A.S.",
+  "nit": "860,025,900",
+  "sector": "MANUFACTURA",
+  "ingresos": {
+   "2021": 1.78,
+   "2022": 2.16,
+   "2023": 2.19,
+   "2024": 2.18,
+   "2025": 2.31
+  }
+ },
+ {
+  "rank": 87,
+  "name": "PEPSICO ALIMENTOS COLOMBIA LIMITADA.",
+  "nit": "890,920,304",
+  "sector": "MANUFACTURA",
+  "ingresos": {
+   "2021": 1.32,
+   "2022": 1.95,
+   "2023": 1.96,
+   "2024": 2.1,
+   "2025": 2.29
+  }
+ },
+ {
+  "rank": 88,
+  "name": "NESTLE DE COLOMBIA S.A.",
+  "nit": "860,002,130",
+  "sector": "MANUFACTURA",
+  "ingresos": {
+   "2021": 1.65,
+   "2022": 2.09,
+   "2023": 2.07,
+   "2024": 2.04,
+   "2025": 2.29
+  }
+ },
+ {
+  "rank": 89,
+  "name": "COMPAÑIA NACIONAL DE CHOCOLATES S.A.S.",
+  "nit": "811,036,030",
+  "sector": "MANUFACTURA",
+  "ingresos": {
+   "2021": 1.21,
+   "2022": 1.55,
+   "2023": 1.71,
+   "2024": 1.94,
+   "2025": 2.27
+  }
+ },
+ {
+  "rank": 90,
+  "name": "C.I. SUNSHINE BOUQUET S.A.S.",
+  "nit": "830,010,738",
+  "sector": "AGROPECUARIO",
+  "ingresos": {
+   "2021": 1.28,
+   "2022": 1.61,
+   "2023": 1.95,
+   "2024": 2.16,
+   "2025": 2.27
+  }
+ },
+ {
+  "rank": 91,
+  "name": "SUCAFINA COLOMBIA S.A.S.",
+  "nit": "901,012,419",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 1.08,
+   "2022": 1.52,
+   "2023": 1.45,
+   "2024": 2.0,
+   "2025": 2.26
+  }
+ },
+ {
+  "rank": 92,
+  "name": "RACAFE & COMPAÑIA SCA",
+  "nit": "860,000,996",
+  "sector": "MANUFACTURA",
+  "ingresos": {
+   "2021": 1.39,
+   "2022": 2.0,
+   "2023": 1.09,
+   "2024": 1.36,
+   "2025": 2.25
+  }
+ },
+ {
+  "rank": 93,
+  "name": "PROMIGAS S.A. E.S.P.",
+  "nit": "890,105,526",
+  "sector": "SERVICIOS",
+  "ingresos": {
+   "2021": 1.8,
+   "2022": 1.99,
+   "2023": 1.72,
+   "2024": 2.27,
+   "2025": 2.2
+  }
+ },
+ {
+  "rank": 94,
+  "name": "PRODUCTOS FAMILIA S.A.",
+  "nit": "890,900,161",
+  "sector": "MANUFACTURA",
+  "ingresos": {
+   "2021": 1.34,
+   "2022": 1.91,
+   "2023": 1.92,
+   "2024": 2.02,
+   "2025": 2.17
+  }
+ },
+ {
+  "rank": 95,
+  "name": "ELECTRIFICADORA DE SANTANDER S.A. E.S.P.",
+  "nit": "890,201,230",
+  "sector": "SERVICIOS",
+  "ingresos": {
+   "2023": 2.1,
+   "2024": 2.25,
+   "2025": 2.15
+  }
+ },
+ {
+  "rank": 96,
+  "name": "INDUSTRIA COLOMBIANA DE MOTOTCICLETAS YAMAHA S.A.",
+  "nit": "890,916,911",
+  "sector": "MANUFACTURA",
+  "ingresos": {
+   "2021": 1.12,
+   "2022": 1.45,
+   "2023": 1.58,
+   "2024": 1.83,
+   "2025": 2.14
+  }
+ },
+ {
+  "rank": 97,
+  "name": "APPLE COLOMBIA S.A.S.",
+  "nit": "900,736,182",
+  "sector": "COMERCIO",
+  "ingresos": {
+   "2021": 1.4,
+   "2022": 2.1,
+   "2023": 2.37,
+   "2024": 1.85,
+   "2025": 2.13
+  }
+ },
+ {
+  "rank": 98,
+  "name": "COMERCIAL CARD S.A.S.",
+  "nit": "900,294,369",
+  "sector": "SERVICIOS",
+  "ingresos": {
+   "2021": 0.57,
+   "2022": 0.82,
+   "2023": 1.03,
+   "2024": 1.52,
+   "2025": 2.12
+  }
+ },
+ {
+  "rank": 99,
+  "name": "TRANSPORTADORA DE GAS INTERNACIONAL S.A. E.S.P.",
+  "nit": "900,134,459",
+  "sector": "SERVICIOS",
+  "ingresos": {
+   "2023": 2.04,
+   "2024": 2.17,
+   "2025": 2.11
+  }
+ },
+ {
+  "rank": 100,
+  "name": "SOCIEDAD CONCESIONARIA OPERADORA AEROPORTUARIA INTERNACIONAL S.A.",
+  "nit": "900,105,860",
+  "sector": "SERVICIOS",
+  "ingresos": {
+   "2024": 1.96,
+   "2025": 2.1
+  }
+ }
+]

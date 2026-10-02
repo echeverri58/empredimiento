@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useData } from '../context/DataContext';
 import { 
   BarChart, 
@@ -52,6 +52,32 @@ export const PublicEntitiesView = () => {
   const [pageSize, setPageSize] = useState(25);
   const [sortField, setSortField] = useState('totalCargos');
   const [sortDirection, setSortDirection] = useState('desc');
+
+  // Eje de nombres: se ensancha para que quepan los nombres de las entidades
+  const [esMovil, setEsMovil] = useState(
+    typeof window !== 'undefined' ? window.innerWidth < 640 : false
+  );
+  useEffect(() => {
+    const alRedimensionar = () => setEsMovil(window.innerWidth < 640);
+    window.addEventListener('resize', alRedimensionar);
+    return () => window.removeEventListener('resize', alRedimensionar);
+  }, []);
+  const anchoNombres = esMovil ? 130 : 210;
+  const maxCaracteres = esMovil ? 20 : 34;
+
+  // Etiqueta del eje Y: recorta el nombre pero lo muestra completo al pasar el mouse
+  const EtiquetaEntidad = ({ x, y, payload }) => {
+    const nombre = String(payload?.value ?? '');
+    const visible = nombre.length > maxCaracteres
+      ? nombre.slice(0, maxCaracteres - 1).trimEnd() + '…'
+      : nombre;
+    return (
+      <text x={x} y={y} dy={3.5} textAnchor="end" fill="#cbd5e1" fontSize={11}>
+        <title>{nombre}</title>
+        {visible}
+      </text>
+    );
+  };
 
   // KPI Calculations
   const metrics = useMemo(() => {
@@ -107,8 +133,7 @@ export const PublicEntitiesView = () => {
 
     return list.slice(0, topRange).map((e, idx) => ({
       ...e,
-      displayRank: idx + 1,
-      shortName: e.name.length > 25 ? e.name.substring(0, 23) + '...' : e.name
+      displayRank: idx + 1
     }));
   }, [filteredPublicEntities, topRange, chartMetric]);
 
@@ -442,21 +467,24 @@ export const PublicEntitiesView = () => {
         </div>
 
         {/* Chart Visualization */}
-        <div className="w-full h-[520px] pt-2">
+        <div className="w-full max-h-[75vh] overflow-y-auto pt-2">
+          <div style={{ height: Math.min(2400, Math.max(420, topEntitiesChartData.length * 22)) }}>
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
               data={topEntitiesChartData}
               layout="vertical"
-              margin={{ top: 10, right: 30, left: 140, bottom: 20 }}
+              margin={{ top: 10, right: 30, left: 0, bottom: 20 }}
             >
               <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" horizontal={true} vertical={true} />
               <XAxis type="number" stroke="#64748b" tick={{ fill: '#94a3b8', fontSize: 11 }} />
               <YAxis
                 type="category"
-                dataKey="shortName"
+                dataKey="name"
                 stroke="#64748b"
-                tick={{ fill: '#cbd5e1', fontSize: 11 }}
-                width={150}
+                tick={<EtiquetaEntidad />}
+                tickLine={false}
+                interval={0}
+                width={anchoNombres}
               />
               <Tooltip content={<CustomChartTooltip />} cursor={{ fill: 'rgba(51, 65, 85, 0.3)' }} />
               <Bar dataKey={chartMetric} fill="#10b981" radius={[0, 6, 6, 0]} className="cursor-pointer">
@@ -469,6 +497,7 @@ export const PublicEntitiesView = () => {
               </Bar>
             </BarChart>
           </ResponsiveContainer>
+          </div>
         </div>
       </div>
 

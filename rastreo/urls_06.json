@@ -1,0 +1,14 @@
+{
+ "resultados": [
+  {"nombre": "GASES DEL CARIBE S.A. E.S.P.", "url": "https://gascaribe.com/wp-content/uploads/2026/04/Informe-Fin-de-Ejercicio-2025.pdf", "tipo": "gestion", "nota": "Informe de Fin de Ejercicio 2025 (el mas reciente). Alternativa 2024: https://gascaribe.com/wp-content/uploads/2025/03/GC-Informe-de-Gestion-2024-FINAL-PARA-FIRMA.pdf"},
+  {"nombre": "INDUSTRIA COLOMBIANA DE CAFE S.A.S.", "url": null, "tipo": "otro", "nota": "Sin informe propio en PDF; Colcafe reporta consolidado dentro de Grupo Nutresa."},
+  {"nombre": "ALIMENTOS FINCA S.A.S.", "url": null, "tipo": "otro", "nota": "Sin informe publico hallado."},
+  {"nombre": "GRUPO ARGOS S.A.", "url": "https://argos.co/wp-content/uploads/2025/07/Anexos-RI2024.pdf", "tipo": "integrado", "nota": "Anexos GRI del Reporte Integrado 2024, donde esta el dato de empleados."},
+  {"nombre": "COLGATE PALMOLIVE COMPANIA", "url": null, "tipo": "otro", "nota": "No existe reporte local de la filial; el corporativo global tiene cifra mundial, no de Colombia."},
+  {"nombre": "INTERCOLOMBIA S.A. E.S.P.", "url": "https://informesempresariales.isaintercolombia.com/2023/wp-content/uploads/2024/04/Reporte-Integrado-de-Gestion-2023-ISAINTERCOLOMBIA.pdf", "tipo": "integrado", "nota": "Ultimo reporte hallado (2023)."},
+  {"nombre": "DIANA CORPORACION S.A.S.", "url": "https://d1.com.co/wp-content/uploads/INFORME-SOSTENIBILIDAD-2024.pdf", "tipo": "sostenibilidad", "nota": "Informe de Sostenibilidad 2024 en el sitio corporativo d1.com.co."},
+  {"nombre": "COMERCIAL NUTRESA S.A.S.", "url": "https://www.tmluc.com/wp-content/uploads/2025/06/informe-de-sostenibilidad-2024-grupo-nutresa.pdf", "tipo": "sostenibilidad", "nota": "Informe de Sostenibilidad 2024 de Grupo Nutresa (CONSOLIDADO del grupo; incluye Comercial Nutresa). Ojo: la cifra es del grupo, no de esta razon social."},
+  {"nombre": "AMARILO S.A.S.", "url": null, "tipo": "otro", "nota": "Sin informe propio en PDF; existe ficha en Camacol."},
+  {"nombre": "POLLOS EL BUCANERO S.A.", "url": null, "tipo": "otro", "nota": "Sin informe publico hallado."}
+ ]
+}

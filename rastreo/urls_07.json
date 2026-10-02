@@ -1,0 +1,14 @@
+{
+ "resultados": [
+  {"nombre": "MAZDA DE COLOMBIA S.A.S.", "url": "https://motorysa.com.co/uploads/Informe-Sostenibilidad-Motorysa-2025-24316dda77.pdf", "tipo": "sostenibilidad", "nota": "Mazda de Colombia no publica informe propio; el documento es de Motorysa (representante de Mazda en Colombia)."},
+  {"nombre": "SOLLA S.A.", "url": null, "tipo": "otro", "nota": "Sin informe publicado en fuentes oficiales."},
+  {"nombre": "MERCADOLIBRE COLOMBIA LIMITADA", "url": "https://investor.mercadolibre.com/sites/mercadolibre/files/mercadolibre/impact/2024-impact-report-mercado-libre.pdf", "tipo": "sostenibilidad", "nota": "Reporte de Impacto 2024 consolidado de Mercado Libre (casa matriz)."},
+  {"nombre": "GENERAL MOTORS COLMOTORES S.A.", "url": null, "tipo": "otro", "nota": "Sin informe oficial reciente; solo documentos antiguos en sitios de terceros."},
+  {"nombre": "ESENTTIA S.A.", "url": "https://www.esenttia.co/wp-content/uploads/2025/08/Informe-de-sostenibilidad-Esenttia-version-espanol-2024-20-08-2025.pdf", "tipo": "sostenibilidad", "nota": "Informe de Sostenibilidad 2024 publicado en agosto de 2025, dominio oficial esenttia.co."},
+  {"nombre": "ALPINA PRODUCTOS ALIMENTICIOS S.A.S.", "url": "https://alpina.com/static/version1703852335/frontend/Omnipro/alpina/default/docs/sostenibilidad/informes/informer-de-sostenibilidad-alpina-2021-V3.pdf", "tipo": "sostenibilidad", "nota": "Ultimo PDF accesible en dominio oficial; el informe 2024 solo se hallo en visor de terceros."},
+  {"nombre": "PEPSICO ALIMENTOS COLOMBIA LIMITADA", "url": "https://www.pepsico.com.co/docs/colombialibraries/fundacion/reporte-anual-2024-fundacion-pepsico-colombia.pdf", "tipo": "anual", "nota": "Es el reporte de la FUNDACION PepsiCo Colombia, no de la compania. Probablemente no sirva."},
+  {"nombre": "NESTLE DE COLOMBIA S.A.", "url": "https://www.nestle.com.co/sites/g/files/pydnoa531/files/2025-08/Nestle_2025_-_Informe_de_Sostenibilidad.pdf", "tipo": "sostenibilidad", "nota": "Informe de Sostenibilidad mas reciente en nestle.com.co (agosto 2025)."},
+  {"nombre": "COMPANIA NACIONAL DE CHOCOLATES S.A.S.", "url": "https://chocolates.com.co/wp-content/uploads/2025/06/informe2025chocolate-1.pdf", "tipo": "sostenibilidad", "nota": "Informe de Gestion de Sostenibilidad 2024 (publicado junio 2025) en chocolates.com.co."},
+  {"nombre": "C.I. SUNSHINE BOUQUET S.A.S.", "url": "https://d306pr3pise04h.cloudfront.net/attachments/cop_2022/511328/original/INFORME%20DE%20SOSTENIBILIDAD%20A%20DIC%202021.pdf", "tipo": "sostenibilidad", "nota": "Informe a diciembre de 2021 alojado en el CDN del Pacto Global; sin edicion posterior localizada."}
+ ]
+}

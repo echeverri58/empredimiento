@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useData } from '../context/DataContext';
 import { 
   BarChart, 
@@ -36,6 +36,32 @@ export const Top100Chart = () => {
   const [metricView, setMetricView] = useState('ingresos');
   const [displayCount, setDisplayCount] = useState(50);
 
+  // En pantallas pequenas el eje de nombres se estrecha para no comerse el grafico
+  const [esMovil, setEsMovil] = useState(
+    typeof window !== 'undefined' ? window.innerWidth < 640 : false
+  );
+  useEffect(() => {
+    const alRedimensionar = () => setEsMovil(window.innerWidth < 640);
+    window.addEventListener('resize', alRedimensionar);
+    return () => window.removeEventListener('resize', alRedimensionar);
+  }, []);
+
+  const anchoNombres = esMovil ? 128 : 190;
+  const maxCaracteres = esMovil ? 20 : 32;
+  // Etiqueta del eje Y: recorta el nombre pero muestra el completo al pasar el mouse
+  const EtiquetaEmpresa = ({ x, y, payload }) => {
+    const nombre = String(payload?.value ?? '');
+    const visible = nombre.length > maxCaracteres
+      ? nombre.slice(0, maxCaracteres - 1).trimEnd() + '…'
+      : nombre;
+    return (
+      <text x={x} y={y} dy={3.5} textAnchor="end" fill="#cbd5e1" fontSize={10}>
+        <title>{nombre}</title>
+        {visible}
+      </text>
+    );
+  };
+
   const top100Data = useMemo(() => {
     if (!currentYearData) return [];
     
@@ -50,14 +76,16 @@ export const Top100Chart = () => {
 
     return list.slice(0, 100).map((c, idx) => ({
       ...c,
-      displayRank: idx + 1,
-      shortName: c.name.length > 16 ? c.name.substring(0, 14) + '...' : c.name
+      displayRank: idx + 1
     }));
   }, [currentYearData, selectedSector, metricView]);
 
   const visibleData = useMemo(() => {
     return top100Data.slice(0, displayCount);
   }, [top100Data, displayCount]);
+
+  // Una barra necesita ~22 px para que su nombre se lea sin pisarse
+  const alturaGrafico = Math.min(2400, Math.max(420, visibleData.length * 22));
 
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
@@ -216,18 +244,19 @@ export const Top100Chart = () => {
       </div>
 
       {/* Chart Visualization */}
-      <div className="w-full h-[420px] sm:h-[520px] pt-1">
+      <div className="w-full max-h-[75vh] overflow-y-auto pt-1">
         {visibleData.length === 0 ? (
-          <div className="w-full h-full flex flex-col items-center justify-center text-slate-500 text-xs">
+          <div className="w-full h-[420px] flex flex-col items-center justify-center text-slate-500 text-xs">
             <Building className="w-8 h-8 mb-2 opacity-50" />
             <p>No hay empresas para el sector seleccionado en el Top 100.</p>
           </div>
         ) : (
+          <div style={{ height: alturaGrafico }}>
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
               data={visibleData}
               layout="vertical"
-              margin={{ top: 5, right: 15, left: 10, bottom: 15 }}
+              margin={{ top: 5, right: 15, left: 0, bottom: 15 }}
               onClick={(state) => {
                 if (state && state.activePayload && state.activePayload.length) {
                   setSelectedCompany(state.activePayload[0].payload);
@@ -243,10 +272,12 @@ export const Top100Chart = () => {
               />
               <YAxis
                 type="category"
-                dataKey="shortName"
+                dataKey="name"
                 stroke="#64748b"
-                tick={{ fill: '#cbd5e1', fontSize: 10 }}
-                width={95}
+                tick={<EtiquetaEmpresa />}
+                tickLine={false}
+                interval={0}
+                width={anchoNombres}
               />
               <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(51, 65, 85, 0.3)' }} />
               <Bar
@@ -261,6 +292,7 @@ export const Top100Chart = () => {
               </Bar>
             </BarChart>
           </ResponsiveContainer>
+          </div>
         )}
       </div>
     </div>

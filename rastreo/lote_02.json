@@ -1,0 +1,49 @@
+{
+ "resultados": [
+  {
+   "nombre": "ALMACENES EXITO S.A.",
+   "empleados": 30000,
+   "anio": 2024,
+   "alcance": "colombia",
+   "fuente": "https://www.grupoexito.com.co/es/informe-sostenibilidad-2025.pdf",
+   "confianza": "media-alta",
+   "nota": "La fuente dice 'mas de 30.000 colaboradores(as)' (51,8% mujeres). Es el piso declarado y agregado del Grupo Exito, no desagregado por sociedad."
+  },
+  {
+   "nombre": "JERONIMO MARTINS COLOMBIA S.A.S.",
+   "empleados": 139858,
+   "anio": 2024,
+   "alcance": "global",
+   "fuente": "https://reports.jeronimomartins.com/annual-report/2024/_assets/downloads/entire-jeronimomartins-ar24.pdf",
+   "confianza": "media",
+   "nota": "ADVERTENCIA: 139.858 es el total del GRUPO Jeronimo Martins (Portugal, Polonia, Colombia, Eslovaquia, Chequia), NO Colombia ni Tiendas Ara. Sin cifra desagregada de Colombia."
+  },
+  {
+   "nombre": "COMUNICACIÓN CELULAR S.A.",
+   "empleados": null,
+   "anio": null,
+   "alcance": "colombia",
+   "fuente": "https://www.claro.com.co/portal/co/recursos/co/pdf/Informe_de_Sostenibilidad_Claro_2024.pdf",
+   "confianza": "baja",
+   "nota": "Localizado el Informe de Sostenibilidad Claro Colombia 2024 (fuente probable), pero el resultado de busqueda no expuso la cifra."
+  },
+  {
+   "nombre": "AEROVIAS DEL CONTINENTE AMERICANO S.A.",
+   "empleados": null,
+   "anio": null,
+   "alcance": "colombia",
+   "fuente": "https://static.avianca.com/media/l0rotatv/informe-de-responsabilidad-corporativa-2024.pdf",
+   "confianza": "baja",
+   "nota": "Localizado el Informe de Responsabilidad Corporativa 2024 de Avianca, pero sin la cifra en los resultados."
+  },
+  {
+   "nombre": "EMGESA S.A. E.S.P.",
+   "empleados": null,
+   "anio": null,
+   "alcance": "colombia",
+   "fuente": "",
+   "confianza": "baja",
+   "nota": "Emgesa opera hoy como Enel Colombia (junto con Codensa). Solo informes antiguos (2020-2021) sin cifra verificable."
+  }
+ ]
+}

@@ -1,0 +1,14 @@
+{
+ "resultados": [
+  {"nombre": "CI ENERGIA SOLAR S.A. ESWINDOWS", "url": "https://www.tecnoglass.com/wp-content/uploads/2025/09/Informe-de-Sostenibilidad-Espan%CC%83ol-2024_compressed-1.pdf", "tipo": "sostenibilidad", "nota": "Informe de Sostenibilidad 2024 del grupo Tecnoglass (matriz). No hay informe propio de la filial colombiana."},
+  {"nombre": "TELEPERFORMANCE COLOMBIA S.A.S.", "url": "https://www.tp.com/media/nn3bfi14/informe-de-sostenibilidad-colombia-2023.pdf", "tipo": "sostenibilidad", "nota": "Informe de Sostenibilidad COLOMBIA 2023, el mas reciente publicado por la compania. Es especifico de Colombia."},
+  {"nombre": "TAMPA CARGO S.A.S.", "url": "https://static.avianca.com/media/43nbe4rq/anexo-ambiental-2024.pdf", "tipo": "sostenibilidad", "nota": "Anexo ambiental 2024 del grupo Avianca. Tampa Cargo no publica informe propio; este anexo puede no traer headcount."},
+  {"nombre": "AVSA S.A.", "url": "https://avsasa.com/_astro/Informe-de-sostenibilidad-2025.DaEwEnsB.pdf", "tipo": "sostenibilidad", "nota": "Informe de sostenibilidad 2025 del sitio oficial. Edicion previa 2024: /_astro/Informe-de-sostenibilidad-2024.D_sZVAL4.pdf"},
+  {"nombre": "OLAM AGRO COLOMBIA S.A.S.", "url": null, "tipo": "otro", "nota": "Sin informe oficial de la entidad colombiana; solo documentos del grupo Olam (Singapur)."},
+  {"nombre": "TERMOBARRANQUILLA S.A. E.S.P.", "url": "https://tebsa.com.co/wp-content/uploads/2025/04/INFORME-DE-SOSTENIBILIDAD-2024-VF-1.pdf", "tipo": "sostenibilidad", "nota": "Informe de Sostenibilidad 2024 publicado en tebsa.com.co."},
+  {"nombre": "TERPEL EXPORTACIONES S.A.S.", "url": "https://www.terpel.com/var/site/storage/original/application/127354748cfd8eadb40ef35b3edc0519.pdf", "tipo": "integrado", "nota": "Informe de Gestion y Sostenibilidad del grupo Organizacion Terpel (nivel grupo). URL alternativa: https://www.terpel.com/var/site/storage/original/application/6756e6b2a274a88f50652d29e6097fc7.pdf"},
+  {"nombre": "ITALCOL DE OCCIDENTE S.A.", "url": "https://italcol.com/wp-content/uploads/2025/11/informe-de-gestion-italcol-de-occidente-nov.pdf", "tipo": "gestion", "nota": "Informe de gestion especifico de Italcol de Occidente. Alternativa de grupo: https://italcol.com/wp-content/uploads/2026/06/Informe_Sostenibilidad_Italcol.pdf"},
+  {"nombre": "FALABELLA DE COLOMBIA S.A.", "url": "https://falabellaretail.falabella.com/wp-content/uploads/2025/05/OR_REPORTE_FALABELLA_2024_v4.pdf", "tipo": "sostenibilidad", "nota": "Reporte de Sostenibilidad 2024 de Falabella Retail (nivel grupo, incluye operacion Colombia)."},
+  {"nombre": "C I UNION DE BANANEROS DE URABA S.A.", "url": "https://www.uniban.com/wp-content/uploads/Reporte-de-Sostenibilidad-Uniban-2025.pdf", "tipo": "sostenibilidad", "nota": "Reporte de Sostenibilidad Uniban 2025 (el mas reciente). Edicion 2024: /wp-content/uploads/Uniban_Reporte_Sostenibilidad-2024.pdf"}
+ ]
+}

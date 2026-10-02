@@ -1,0 +1,14 @@
+{
+ "resultados": [
+  {"nombre": "EMPRESAS MUNICIPALES DE CALI E.I.C.E. E.S.P.", "url": "https://www.emcali.com.co/documents/20143/335681/Informe-de-Sostenibilidad-2020.pdf", "tipo": "sostenibilidad", "nota": "Informe de sostenibilidad 2020 (antiguo). Emcali tambien publica Informe de Gestion 2024 en su seccion de Transparencia."},
+  {"nombre": "TECNOQUIMICAS S.A.", "url": null, "tipo": "otro", "nota": "Sin informe oficial publicado; solo documentos de terceros."},
+  {"nombre": "PETROLEOS DEL MILENIO S.A.S.", "url": null, "tipo": "otro", "nota": "Sin informe publicado; petromil.com solo expone politicas y manuales."},
+  {"nombre": "GASEOSAS LUX S.A.S.", "url": "https://compite.realrisk.net/wp-content/uploads/2024/07/informe_de_sostenibilidad_postobon_2023.pdf", "tipo": "sostenibilidad", "nota": "Gaseosas Lux reporta dentro del Informe de Sostenibilidad de Postobon. Se usa la edicion 2023 (mas reciente)."},
+  {"nombre": "SURAMERICA COMERCIAL S.A.S.", "url": "https://suramericana.com/content/uploads/2024/04/suramericana_informe_anual_2023-1.pdf", "tipo": "anual", "nota": "Informe anual de Suramericana S.A. (dominio oficial)."},
+  {"nombre": "RENAULT SOCIEDAD DE FABRICACION DE AUTOMOTORES S.A.S.", "url": "https://prensa.renault.com.co/prensa/reporte-de-sostenibilidad-2024/", "tipo": "sostenibilidad", "nota": "Comunicado oficial que enlaza el Informe de Sostenibilidad 2024; el PDF directo no quedo indexado."},
+  {"nombre": "ARIS MINING PANAMA SEGOVIA S.A.", "url": "http://acmineria.com.co/sitio/wp-content/uploads/2024/01/aris-mining-sos-22.pdf", "tipo": "sostenibilidad", "nota": "Edicion 2022 del informe de sostenibilidad (operacion Segovia)."},
+  {"nombre": "COMERCIALIZADORA INTERNACIONAL ESLOP S.A.S.", "url": "https://www.cieslop.com/wp-content/uploads/2025/07/Informe_Sostenibilidad_CI_ESLOP_2024.pdf", "tipo": "sostenibilidad", "nota": "Informe de Sostenibilidad 2024 en dominio oficial cieslop.com."},
+  {"nombre": "VERANO ENERGY BARBADOS LIMITED SUCURSAL", "url": null, "tipo": "otro", "nota": "Sin informe corporativo con datos de empleados."},
+  {"nombre": "CONTEGRAL S.A.S.", "url": null, "tipo": "otro", "nota": "Sin informe propio; filial de Grupo BIOS cuyo informe agregado no se localizo."}
+ ]
+}

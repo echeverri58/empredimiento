@@ -1,0 +1,49 @@
+{
+ "resultados": [
+  {
+   "nombre": "ECOPETROL S.A.",
+   "empleados": 13001,
+   "anio": 2024,
+   "alcance": "colombia",
+   "fuente": "https://www.ecopetrol.com.co/wps/wcm/connect/5c11d386-8780-4472-9efd-7d6c600810a9/Capitulo+ESG+2024+Circular+031+ESP.pdf",
+   "confianza": "baja",
+   "nota": "La fuente dice literalmente '13.001 empleos directos e indirectos' (cifra agregada, no es headcount de planta). El 20-F de Ecopetrol (SEC, symbol EC) trae una tabla 'Number of employees' para 2024 y 2023, pero el resultado de busqueda no expuso el valor."
+  },
+  {
+   "nombre": "ORGANIZACIÓN TERPEL S.A.",
+   "empleados": null,
+   "anio": null,
+   "alcance": "colombia",
+   "fuente": "",
+   "confianza": "nula",
+   "nota": "Sin cifra de empleados con fuente. Solo perfiles corporativos y analisis financieros sin headcount."
+  },
+  {
+   "nombre": "REFINERIA DE CARTAGENA S.A. - Reficar",
+   "empleados": null,
+   "anio": null,
+   "alcance": "colombia",
+   "fuente": "",
+   "confianza": "baja",
+   "nota": "Se localizaron los Informes de Gestion y Sostenibilidad 2024 y 2025 pero los resultados no expusieron la cifra."
+  },
+  {
+   "nombre": "D1 S.A.S.",
+   "empleados": 26000,
+   "anio": 2025,
+   "alcance": "colombia",
+   "fuente": "https://forbes.co/2025/10/01/negocios/d1-supera-los-26-000-empleos-formales-el-55-son-mujeres",
+   "confianza": "alta",
+   "nota": "Forbes Colombia (01/10/2025): 'D1 supera los 26.000 empleos formales'. La Republica reporta la misma cifra."
+  },
+  {
+   "nombre": "EMPRESAS PÚBLICAS DE MEDELLÍN E.S.P. - EPM",
+   "empleados": null,
+   "anio": null,
+   "alcance": "colombia",
+   "fuente": "",
+   "confianza": "baja",
+   "nota": "Solo resultados financieros (ingresos $41,5 billones 2024) sin exponer la cifra de empleados. Distinguir EPM casa matriz de Grupo EPM."
+  }
+ ]
+}

@@ -1,0 +1,14 @@
+{
+ "resultados": [
+  {"nombre": "BIOMAX BIOCOMBUSTIBLES S.A.", "url": "https://d306pr3pise04h.cloudfront.net/attachments/cop_2022/512857/original/Informe%20de%20sostenibilidad%202021F..pdf", "tipo": "sostenibilidad", "nota": "Edicion 2021, la mas reciente localizada (COP ante Pacto Global)."},
+  {"nombre": "CENCOSUD COLOMBIA S.A.", "url": "https://www.cencosud.com/cencosud/site/docs/20250410/20250410124319/reporte_de_sostenibilidad_2024_cencosud.pdf", "tipo": "sostenibilidad", "nota": "Reporte 2024 de Cencosud S.A. (nivel corporativo, incluye Colombia)."},
+  {"nombre": "DISTRACOM S.A.", "url": "https://www.oxxo.com/pdfs/IS_PYS_2024_b.pdf", "tipo": "sostenibilidad", "nota": "Informe 2024 de OXXO Proximidad y Servicios (FEMSA), unidad que agrupa OXXO Colombia."},
+  {"nombre": "GRUPO ENERGIA DE BOGOTA S.A. E.S.P.", "url": "https://www.grupoenergiabogota.com/content/download/49882/file/Reporte%20Integrado%20de%20Sostenibilidad%202024%20%28AGA%29.pdf", "tipo": "integrado", "nota": "Reporte Integrado de Sostenibilidad 2024 (version Asamblea General de Accionistas)."},
+  {"nombre": "CONTINENTAL GOLD LIMITED SUCURSAL COLOMBIA", "url": "https://www.continentalgold.com/wp-content/uploads/2025/07/Zijin_CG_%20Informe%20de%20Sostenibilidad%202024_GRI.pdf", "tipo": "sostenibilidad", "nota": "Informe de Sostenibilidad 2024 GRI, publicado en continentalgold.com."},
+  {"nombre": "AUTOMOTORES TOYOTA COLOMBIA S.A.S.", "url": "https://www.toyota.com.co/wp-content/uploads/2024/07/Informe_sostenibilidad_2023_Toyota.pdf", "tipo": "sostenibilidad", "nota": "Informe 2023, el mas reciente publicado en toyota.com.co."},
+  {"nombre": "ITALCOL S.A.", "url": "https://italcol.com/wp-content/uploads/2026/06/Informe_Sostenibilidad_Italcol.pdf", "tipo": "sostenibilidad", "nota": "Informe de Sostenibilidad GRI en italcol.com."},
+  {"nombre": "FRONTERA ENERGY COLOMBIA CORP. SUCURSAL COLOMBIA", "url": "https://www.fronteraenergy.ca/wp-content/uploads/frontera_mx_2024_ESPv_3_compressed.pdf", "tipo": "sostenibilidad", "nota": "Informe de Sostenibilidad 2024 en espanol; cubre operaciones incluida Colombia."},
+  {"nombre": "INTERCONEXION ELECTRICA S.A. E.S.P.", "url": "https://isa.co/wp-content/uploads/2026/03/reporte-integrado-isa-2025-v2.pdf", "tipo": "integrado", "nota": "Reporte Integrado 2025 de ISA casa matriz. Para ISA Intercolombia hay reporte en informesempresariales.isaintercolombia.com."},
+  {"nombre": "SAMSUNG ELECTRONICS COLOMBIA S.A.", "url": "https://www.samsung.com/global/sustainability/media/pdf/Samsung_Electronics_Sustainability_Report_2024_ENG.pdf", "tipo": "sostenibilidad", "nota": "No existe informe de la sociedad colombiana; es el reporte global de Samsung Electronics. Probablemente no sirva."}
+ ]
+}

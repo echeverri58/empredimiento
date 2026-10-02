@@ -1,0 +1,49 @@
+{
+ "resultados": [
+  {
+   "nombre": "COLOMBIANA DE COMERCIO S.A. (Alkosto)",
+   "empleados": null,
+   "anio": null,
+   "alcance": "colombia",
+   "fuente": "",
+   "confianza": "",
+   "nota": "Sin cifra con fuente. Solo directorios corporativos y notas de ventas/establecimientos. Requiere informe de gestion AKT o Supersociedades."
+  },
+  {
+   "nombre": "KOPPS COMERCIAL S.A.S.",
+   "empleados": null,
+   "anio": null,
+   "alcance": "colombia",
+   "fuente": "",
+   "confianza": "",
+   "nota": "Sin cifra publicada. Confirmado que es filial/distribuidora de Bavaria (NIT 900818921); aparece en notas de los estados financieros de Bavaria 2023 pero sin headcount."
+  },
+  {
+   "nombre": "PRIMAX COLOMBIA S.A.",
+   "empleados": null,
+   "anio": null,
+   "alcance": "colombia",
+   "fuente": "",
+   "confianza": "",
+   "nota": "Solo se hallo el reporte de sostenibilidad 2022 de Primax Peru (grupo, no Colombia) y perfiles antiguos. Sin headcount de Colombia."
+  },
+  {
+   "nombre": "CENIT TRANSPORTE Y LOGISTICA DE HIDROCARBUROS S.A.S.",
+   "empleados": null,
+   "anio": null,
+   "alcance": "colombia",
+   "fuente": "https://cenit-transporte.com/wp-content/uploads/2025/04/INFORME%20SOSTENIBILIDAD%20CENIT%202024.pdf",
+   "confianza": "",
+   "nota": "ALTA PRIORIDAD segunda pasada: el Informe Integrado 2024 de Cenit (abril 2025) SI contiene una tabla de personal por cargo 2021-2024, pero no se pudo abrir el PDF."
+  },
+  {
+   "nombre": "BAVARIA Y COMPANIA S.C.A.",
+   "empleados": 4646,
+   "anio": 2023,
+   "alcance": "colombia",
+   "fuente": "https://www.bavaria.co/sites/g/files/seuoyk1666/files/2024-05/Resumen%20Digital-InformedeSostenibilidad-2023-.pdf",
+   "confianza": "media-alta",
+   "nota": "Cita textual del informe de sostenibilidad: 'En 2023, nuestro equipo fue de 4.646 personas'. Es la operacion en Colombia (no AB InBev global). Existe informe 2024 publicado en abril 2025 sin consultar."
+  }
+ ]
+}

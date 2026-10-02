@@ -1,0 +1,14 @@
+{
+ "resultados": [
+  {"nombre": "SUCAFINA COLOMBIA S.A.S.", "url": null, "tipo": "otro", "nota": "Sin informe local de Colombia; solo reporte de sostenibilidad del grupo (Suiza), no desagregado por pais."},
+  {"nombre": "RACAFE & COMPANIA SCA", "url": "https://racafe.com.co/documents/85/1._RS_Racafe_2024_ES_compressed.pdf", "tipo": "sostenibilidad", "nota": "Reporte de Sostenibilidad Racafe 2024 (sitio oficial)."},
+  {"nombre": "PROMIGAS S.A. E.S.P.", "url": "https://www.promigas.com/Documents/ASAMBLEA/Informe%20Integrado%20de%20Gesti%C3%B3n%20Promigas%202024-VF%20web.pdf", "tipo": "integrado", "nota": "Informe Integrado de Gestion Promigas 2024."},
+  {"nombre": "PRODUCTOS FAMILIA S.A.", "url": null, "tipo": "otro", "nota": "Sin PDF oficial verificado de Softys Colombia; solo reporte regional Chile/Andes."},
+  {"nombre": "ELECTRIFICADORA DE SANTANDER S.A. E.S.P.", "url": "https://www.essa.com.co/site/Portals/0/documentos/transparencia-ita/transparencia-essa/informes-de-sostenibilidad/Informe-de-sostenibilidad-2024-ESSA-web.pdf", "tipo": "sostenibilidad", "nota": "Informe de Sostenibilidad ESSA 2024 (portal oficial de transparencia)."},
+  {"nombre": "INDUSTRIA COLOMBIANA DE MOTOCICLETAS YAMAHA S.A.", "url": "https://www.incolmotos-yamaha.com.co/distribuidor/wp-content/uploads/2025/03/Informe-de-Sostenibilidad-2024-ICOLMOTOS_com-1.pdf", "tipo": "sostenibilidad", "nota": "Informe de Gestion y Sostenibilidad Incolmotos Yamaha 2024."},
+  {"nombre": "APPLE COLOMBIA S.A.S.", "url": null, "tipo": "otro", "nota": "Apple no publica informe por pais; solo reportes globales sin desagregacion de Colombia."},
+  {"nombre": "COMERCIAL CARD S.A.S.", "url": null, "tipo": "otro", "nota": "Sin documento oficial publicado."},
+  {"nombre": "TRANSPORTADORA DE GAS INTERNACIONAL S.A. E.S.P.", "url": "https://www.tgi.com.co/wp-content/uploads/2026/04/Reporte-Integrado-de-Sostenibilidad-2024-final-09052025.pdf", "tipo": "integrado", "nota": "Reporte Integrado de Sostenibilidad 2024 (sitio oficial tgi.com.co)."},
+  {"nombre": "SOCIEDAD CONCESIONARIA OPERADORA AEROPORTUARIA INTERNACIONAL S.A.", "url": "https://opain.co/upload/annual_report_.pdf", "tipo": "anual", "nota": "Annual report en opain.co; en ingles y sin año confirmado."}
+ ]
+}
